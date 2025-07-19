@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Rounded:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+</head>
+<body>
+     <div class="container">
+        <div class="REDDIT-LOGO">
+                <svg id="side-btn" style="margin-top: 20px; margin-right: 10px;" rpl="" fill="currentColor" height="20" icon-name="menu-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.25 4.7H1.75A.772.772 0 0 1 1 3.95c0-.399.352-.75.75-.75h16.5c.398 0 .75.351.75.75 0 .397-.352.75-.75.75ZM19 9.996a.772.772 0 0 0-.75-.75H1.75a.772.772 0 0 0-.75.75c0 .398.352.75.75.75h16.5c.398 0 .75-.352.75-.75Zm0 6.047a.772.772 0 0 0-.75-.75H1.75a.772.772 0 0 0-.75.75c0 .398.352.75.75.75h16.5c.398 0 .75-.352.75-.75Z"></path>
+                </svg>
+            
+            <svg style="margin-top: 15px;transform: scale(1)" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 216" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+            <style>
+            .snoo-cls-1 {
+                fill: url(#snoo-radial-gragient) white;
+            }
+
+            .snoo-cls-1, .snoo-cls-2, .snoo-cls-3, .snoo-cls-4, .snoo-cls-5, .snoo-cls-6, .snoo-cls-7, .snoo-cls-8, .snoo-cls-9, .snoo-cls-10, .snoo-cls-11 {
+                stroke-width: 0px;
+            }
+
+            .snoo-cls-2 {
+                fill: url(#snoo-radial-gragient-2) white;
+            }
+
+            .snoo-cls-3 {
+                fill: url(#snoo-radial-gragient-3) white;
+            }
+
+            .snoo-cls-4 {
+                fill: url(#snoo-radial-gragient-4) #fc4301;
+            }
+
+            .snoo-cls-5 {
+                fill: url(#snoo-radial-gragient-6) black;
+            }
+
+            .snoo-cls-6 {
+                fill: url(#snoo-radial-gragient-8) black;
+            }
+
+            .snoo-cls-7 {
+                fill: url(#snoo-radial-gragient-5) #fc4301;
+            }
+
+            .snoo-cls-8 {
+                fill: url(#snoo-radial-gragient-7) white;
+            }
+
+            .snoo-cls-9 {
+                fill: #842123;
+            }
+
+            .snoo-cls-10 {
+                fill: #ff4500;
+            }
+
+            .snoo-cls-11 {
+                fill: #ffc49c;
+            }
+            </style>
+            <radialGradient id="snoo-radial-gragient" cx="169.75" cy="92.19" fx="169.75" fy="92.19" r="50.98" gradientTransform="translate(0 11.64) scale(1 .87)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#feffff"></stop>
+            <stop offset=".4" stop-color="#feffff"></stop>
+            <stop offset=".51" stop-color="#f9fcfc"></stop>
+            <stop offset=".62" stop-color="#edf3f5"></stop>
+            <stop offset=".7" stop-color="#dee9ec"></stop>
+            <stop offset=".72" stop-color="#d8e4e8"></stop>
+            <stop offset=".76" stop-color="#ccd8df"></stop>
+            <stop offset=".8" stop-color="#c8d5dd"></stop>
+            <stop offset=".83" stop-color="#ccd6de"></stop>
+            <stop offset=".85" stop-color="#d8dbe2"></stop>
+            <stop offset=".88" stop-color="#ede3e9"></stop>
+            <stop offset=".9" stop-color="#ffebef"></stop>
+            </radialGradient>
+            <radialGradient id="snoo-radial-gragient-2" cx="47.31" fx="47.31" r="50.98" xlink:href="#snoo-radial-gragient"></radialGradient>
+            <radialGradient id="snoo-radial-gragient-3" cx="109.61" cy="85.59" fx="109.61" fy="85.59" r="153.78" gradientTransform="translate(0 25.56) scale(1 .7)" xlink:href="#snoo-radial-gragient"></radialGradient>
+            <radialGradient id="snoo-radial-gragient-4" cx="-6.01" cy="64.68" fx="-6.01" fy="64.68" r="12.85" gradientTransform="translate(81.08 27.26) scale(1.07 1.55)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#f60"></stop>
+            <stop offset=".5" stop-color="#ff4500"></stop>
+            <stop offset=".7" stop-color="#fc4301"></stop>
+            <stop offset=".82" stop-color="#f43f07"></stop>
+            <stop offset=".92" stop-color="#e53812"></stop>
+            <stop offset="1" stop-color="#d4301f"></stop>
+            </radialGradient>
+            <radialGradient id="snoo-radial-gragient-5" cx="-73.55" cy="64.68" fx="-73.55" fy="64.68" r="12.85" gradientTransform="translate(62.87 27.26) rotate(-180) scale(1.07 -1.55)" xlink:href="#snoo-radial-gragient-4"></radialGradient>
+            <radialGradient id="snoo-radial-gragient-6" cx="107.93" cy="166.96" fx="107.93" fy="166.96" r="45.3" gradientTransform="translate(0 57.4) scale(1 .66)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#172e35"></stop>
+            <stop offset=".29" stop-color="#0e1c21"></stop>
+            <stop offset=".73" stop-color="#030708"></stop>
+            <stop offset="1" stop-color="#000"></stop>
+            </radialGradient>
+            <radialGradient id="snoo-radial-gragient-7" cx="147.88" cy="32.94" fx="147.88" fy="32.94" r="39.77" gradientTransform="translate(0 .54) scale(1 .98)" xlink:href="#snoo-radial-gragient"></radialGradient>
+            <radialGradient id="snoo-radial-gragient-8" cx="131.31" cy="73.08" fx="131.31" fy="73.08" r="32.6" gradientUnits="userSpaceOnUse">
+            <stop offset=".48" stop-color="#7a9299"></stop>
+            <stop offset=".67" stop-color="#172e35"></stop>
+            <stop offset=".75" stop-color="#000"></stop>
+            <stop offset=".82" stop-color="#172e35"></stop>
+            </radialGradient>
+            </defs>
+            <path class="snoo-cls-10" d="m108,0h0C48.35,0,0,48.35,0,108h0c0,29.82,12.09,56.82,31.63,76.37l-20.57,20.57c-4.08,4.08-1.19,11.06,4.58,11.06h92.36s0,0,0,0c59.65,0,108-48.35,108-108h0C216,48.35,167.65,0,108,0Z"></path>
+            <circle class="snoo-cls-1" cx="169.22" cy="106.98" r="25.22"></circle>
+            <circle class="snoo-cls-2" cx="46.78" cy="106.98" r="25.22"></circle>
+            <ellipse class="snoo-cls-3" cx="108.06" cy="128.64" rx="72" ry="54"></ellipse>
+            <path class="snoo-cls-4" d="m86.78,123.48c-.42,9.08-6.49,12.38-13.56,12.38s-12.46-4.93-12.04-14.01c.42-9.08,6.49-15.02,13.56-15.02s12.46,7.58,12.04,16.66Z"></path>
+            <path class="snoo-cls-7" d="m129.35,123.48c.42,9.08,6.49,12.38,13.56,12.38s12.46-4.93,12.04-14.01c-.42-9.08-6.49-15.02-13.56-15.02s-12.46,7.58-12.04,16.66Z"></path>
+            <ellipse class="snoo-cls-11" cx="79.63" cy="116.37" rx="2.8" ry="3.05"></ellipse>
+            <ellipse class="snoo-cls-11" cx="146.21" cy="116.37" rx="2.8" ry="3.05"></ellipse>
+            <path class="snoo-cls-5" d="m108.06,142.92c-8.76,0-17.16.43-24.92,1.22-1.33.13-2.17,1.51-1.65,2.74,4.35,10.39,14.61,17.69,26.57,17.69s22.23-7.3,26.57-17.69c.52-1.23-.33-2.61-1.65-2.74-7.77-.79-16.16-1.22-24.92-1.22Z"></path>
+            <circle class="snoo-cls-8" cx="147.49" cy="49.43" r="17.87"></circle>
+            <path class="snoo-cls-6" d="m107.8,76.92c-2.14,0-3.87-.89-3.87-2.27,0-16.01,13.03-29.04,29.04-29.04,2.14,0,3.87,1.73,3.87,3.87s-1.73,3.87-3.87,3.87c-11.74,0-21.29,9.55-21.29,21.29,0,1.38-1.73,2.27-3.87,2.27Z"></path>
+            <path class="snoo-cls-9" d="m62.82,122.65c.39-8.56,6.08-14.16,12.69-14.16,6.26,0,11.1,6.39,11.28,14.33.17-8.88-5.13-15.99-12.05-15.99s-13.14,6.05-13.56,15.2c-.42,9.15,4.97,13.83,12.04,13.83.17,0,.35,0,.52,0-6.44-.16-11.3-4.79-10.91-13.2Z"></path>
+            <path class="snoo-cls-9" d="m153.3,122.65c-.39-8.56-6.08-14.16-12.69-14.16-6.26,0-11.1,6.39-11.28,14.33-.17-8.88,5.13-15.99,12.05-15.99,7.07,0,13.14,6.05,13.56,15.2.42,9.15-4.97,13.83-12.04,13.83-.17,0-.35,0-.52,0,6.44-.16,11.3-4.79,10.91-13.2Z"></path>
+            </svg>
+
+            <svg class="reddit-word" style="margin-top: 15px;transform: scale(0.7); margin-left: -10px" class="h-[22px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 514 149" style="color: var(--shreddit-color-wordmark)">
+            <g style="fill: currentColor">
+            <path d="m71.62,45.92l-12.01,28.56c-1.51-.76-5.11-1.61-8.51-1.61s-6.81.85-10.12,2.46c-6.53,3.31-11.35,9.93-11.35,19.48v52.3H-.26V45.35h29.04v14.28h.57c6.81-9.08,17.21-15.79,30.74-15.79,4.92,0,9.65.95,11.54,2.08Z"></path>
+            <path d="m65.84,96.52c0-29.41,20.15-52.68,50.32-52.68,27.33,0,46.91,19.96,46.91,48.05,0,4.92-.47,9.55-1.51,14h-68.48c3.12,10.69,12.39,19.01,26.29,19.01,7.66,0,18.54-2.74,24.4-7.28l9.27,22.32c-8.61,5.86-21.75,8.7-33.29,8.7-32.25,0-53.91-20.81-53.91-52.11Zm26.67-9.36h43.03c0-13.05-8.89-19.96-19.77-19.96-12.3,0-20.62,7.94-23.27,19.96Z"></path>
+            <path d="m419.53-.37c10.03,0,18.25,8.23,18.25,18.25s-8.23,18.25-18.25,18.25-18.25-8.23-18.25-18.25S409.51-.37,419.53-.37Zm14.94,147.49h-29.89V45.35h29.89v101.77Z"></path>
+            <path d="m246,1.47l-.09,53.53h-.57c-8.23-7.85-17.12-11.07-28.75-11.07-28.66,0-47.67,23.08-47.67,52.3s17.78,52.4,46.72,52.4c12.11,0,23.55-4.16,30.93-13.62h.85v12.11h28.47V1.47h-29.89Zm1.42,121.39h-.99l-6.67-6.93c-4.34,4.33-10.28,6.93-17.22,6.93-14.64,0-24.88-11.58-24.88-26.6s10.24-26.6,24.88-26.6,24.88,11.58,24.88,26.6v26.6Z"></path>
+            <path d="m360.15,1.47l-.09,53.53h-.57c-8.23-7.85-17.12-11.07-28.75-11.07-28.66,0-47.67,23.08-47.67,52.3s17.78,52.4,46.72,52.4c12.11,0,23.55-4.16,30.93-13.62h.85v12.11h28.47V1.47h-29.89Zm1.28,121.39h-.99l-6.67-6.93c-4.34,4.33-10.28,6.93-17.22,6.93-14.64,0-24.88-11.58-24.88-26.6s10.24-26.6,24.88-26.6,24.88,11.58,24.88,26.6v26.6Z"></path>
+            <path d="m492.44,45.35h21.85v25.44h-21.85v76.33h-29.89v-76.33h-21.75v-25.44h21.75v-27.66h29.89v27.66Z"></path>
+            </g>
+            </svg>
+        
+
+           </div>
+            <div class="search-container">
+                <svg style="color: white; position:fixed; margin: 15px" aria-hidden="true" fill="currentColor" height="16" icon-name="search-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$412255307$--><!--?lit$412255307$--><path d="M18.916 17.717 15.2 14.042a8.043 8.043 0 1 0-1.053 1.069l3.709 3.672a.75.75 0 0 0 1.056-1.066h.004ZM2.5 9a6.5 6.5 0 1 1 11.229 4.446.695.695 0 0 0-.116.077.752.752 0 0 0-.086.132A6.492 6.492 0 0 1 2.5 9Z"></path><!--?--> </svg>
+                <input type="text" class="input"  placeholder="Search Reddit">
+            </div>
+            
+        <div style="margin-right: 1rem; margin-top: 5px">
+       <div style="display: flex; flex-direction: row;">
+        <div style="margin-right: 5px;" id="getapp">
+            <button class="Get-App">
+            <span style="margin-left: 5px;">
+                <svg rpl="" fill="currentColor" height="20" icon-name="qr-code-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="cz-color-16777215">
+                <path d="M14.8 16h-3.7v-1.2h3.7v-3.7H16v3.7c0 .7-.5 1.2-1.2 1.2ZM9 7.8V5.2C9 4.5 8.5 4 7.8 4H5.2C4.5 4 4 4.5 4 5.2v2.5C4 8.5 4.5 9 5.2 9h2.5C8.5 9 9 8.5 9 7.8Zm-1.2 0H5.3V5.3h2.5v2.5Zm8.2 0V5.2c0-.7-.5-1.2-1.2-1.2h-2.5c-.8 0-1.3.5-1.3 1.2v2.5c0 .8.5 1.3 1.2 1.3h2.5c.8 0 1.3-.5 1.3-1.2Zm-1.2 0h-2.5V5.3h2.5v2.5Zm-5.8 7v-2.5c0-.8-.5-1.3-1.2-1.3H5.2c-.7 0-1.2.5-1.2 1.2v2.5c0 .8.5 1.3 1.2 1.3h2.5c.8 0 1.3-.5 1.3-1.2Zm-1.2 0H5.3v-2.5h2.5v2.5Zm-.8 3H2.6c-.2 0-.4-.2-.4-.4V13H1v4.4c0 .9.7 1.6 1.6 1.6H7v-1.2Zm12-.4V13h-1.2v4.4c0 .2-.2.4-.4.4H13V19h4.4c.9 0 1.6-.7 1.6-1.6Zm0-14.8c0-.9-.7-1.6-1.6-1.6H13v1.2h4.4c.2 0 .4.2.4.4V7H19V2.6Zm-16.8 0c0-.2.2-.4.4-.4H7V1H2.6C1.7 1 1 1.7 1 2.6V7h1.2V2.6Z" class="cz-color-16777215"></path>
+                </svg>
+            </span>
+            
+            <span style="margin-left: 10px;margin-right: 10px;">Get App</span>   
+        </button>
+        </div>
+        <div>
+        <button id="login" class="lgn-btn" type="button" ><span id="login-text">Log In</span></button>
+        </div>
+        <details class="more-details">
+            <summary class="more-summary">
+                <div class="more" style="transform: translateX(5px);"><img src="./option.png" id="more"></div>
+            </summary>
+            
+        </details>
+        </div>
+        </div>
+        
+    </div>
+    <div id="collapse-container">
+         <button id="collapse-nav-btn" type="button"><img src="./icons8-menu-32.png"></button>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <aside id="side-bar">
+        
+       <div class="menu">
+            <div>
+                <a href="index.html" class="header1"> 
+                <span style="margin-left: 5px;"><svg rpl="" fill="currentColor" height="20" icon-name="home-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"> <!--?lit$917627209$--><!--?lit$917627209$--><path d="m17.71 8.549 1.244.832v8.523a1.05 1.05 0 0 1-1.052 1.046H12.73a.707.707 0 0 1-.708-.707v-4.507c0-.76-1.142-1.474-2.026-1.474-.884 0-2.026.714-2.026 1.474v4.507a.71.71 0 0 1-.703.707H2.098a1.046 1.046 0 0 1-1.052-1.043V9.381l1.244-.835v9.158h4.44v-3.968c0-1.533 1.758-2.72 3.27-2.72s3.27 1.187 3.27 2.72v3.968h4.44V8.549Zm2.04-1.784L10.646.655a1.12 1.12 0 0 0-1.28-.008L.25 6.765l.696 1.036L10 1.721l9.054 6.08.696-1.036Z"></path><!--?--> </svg> Home</span></a>
+            </div>    
+        
+            <div>
+                <a href="#" class="header1"><svg rpl="" fill="currentColor" height="20" icon-name="popular-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"> <!--?lit$576763487$--><!--?lit$576763487$--><path d="M10 0a10 10 0 1 0 10 10A10.01 10.01 0 0 0 10 0Zm0 18.75a8.7 8.7 0 0 1-5.721-2.145l8.471-8.471v4.148H14V6.638A.647.647 0 0 0 13.362 6H7.718v1.25h4.148L3.4 15.721A8.739 8.739 0 1 1 10 18.75Z"></path><!--?--> </svg><span>Popular</span></a>
+            </div>
+                
+            <div>
+                <a href="#" class="header1"><svg rpl="" fill="currentColor" height="20" icon-name="answers-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"> <!--?lit$576763487$--><!--?lit$576763487$--><path d="m18.69 11.25-4.34-7.52c-.86-1.48-2.33-2.4-4.04-2.5-1.92-.12-3.71.84-4.67 2.5L1.3 11.25c-.87 1.51-.9 3.33-.09 4.86a5.02 5.02 0 0 0 4.44 2.68h8.68c1.82 0 3.45-.94 4.35-2.51.91-1.57.91-3.45 0-5.03h.01Zm-8.45-8.78c1.28.08 2.39.77 3.03 1.88l2.74 4.74c-.22-.08-.45-.14-.68-.18a5.014 5.014 0 0 0-3.44.58c-1.14.66-2.56.67-3.73.02-.01 0-.02-.02-.03-.02h-.01a3.857 3.857 0 0 1-1.7-2.06c-.3-.86-.27-1.79.05-2.61l.27-.46a3.759 3.759 0 0 1 3.27-1.89h.24-.01ZM2.32 15.52c-.61-1.15-.59-2.52.07-3.65l2.73-4.74c.04.23.11.46.18.68.41 1.15 1.17 2.08 2.22 2.68.02 0 .03.01.05.02 1.13.68 1.84 1.91 1.84 3.25 0 .92-.32 1.78-.93 2.5-.6.7-1.43 1.14-2.32 1.27h-.51a3.73 3.73 0 0 1-3.34-2.01h.01Zm15.29.13a3.747 3.747 0 0 1-3.27 1.89H8.86c.18-.16.36-.32.51-.51.79-.93 1.21-2.05 1.21-3.26 0-1.34.72-2.59 1.9-3.27.79-.46 1.7-.61 2.63-.44.89.17 1.68.66 2.23 1.35l.27.46c.68 1.18.68 2.59 0 3.78Z"></path><!--?--> </svg><span>Answers <span class="beta">BETA</span></span></a>
+            </div>
+
+
+
+            <hr style="width: 100%;border-color: hsla(0, 0%, 100%, 0.123);">
+
+            <details class="details">
+                <summary class="dropdown-header">
+                   <span class="header2" style="color: #748791;">Topics <span> <svg class="dropdown-icon" fill="currentColor" height="20" icon-name="caret-down-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 13.02a.755.755 0 0 1-.53-.22L4.912 8.242A.771.771 0 0 1 4.93 7.2a.771.771 0 0 1 1.042-.018L10 11.209l4.028-4.027a.771.771 0 0 1 1.042.018.771.771 0 0 1 .018 1.042L10.53 12.8a.754.754 0 0 1-.53.22Z"></path>
+                    </svg></span></span>
+                  
+                   
+                </summary>
+            
+                <div>
+                    <details class="sub-details">
+                        <summary class="dropdown-headers">
+                            <span class="header2" style="font-size: 13px;"><span style="display: flex;">
+                                <svg rpl="" fill="currentColor" height="20" icon-name="topic-funny-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="cz-color-15328475">
+                            <path d="M7.678 5.875h-1.25V5.25a1.875 1.875 0 0 0-3.75 0v.625h-1.25V5.25a3.125 3.125 0 1 1 6.25 0v.625Z" class="cz-color-15328475"></path><path d="M18.678 5.875h-1.25V5.25a1.875 1.875 0 1 0-3.75 0v.625h-1.25V5.25a3.125 3.125 0 0 1 6.25 0v.625Z" class="cz-color-15328475"></path><path d="M10.053 17.875A8.635 8.635 0 0 1 1.428 9.25a.625.625 0 0 1 .625-.625h16a.625.625 0 0 1 .625.625 8.635 8.635 0 0 1-8.625 8.625Zm-7.348-8a7.375 7.375 0 0 0 14.7 0h-14.7Z" class="cz-color-15328475"></path>
+                            </svg>
+                                <span style="margin-left: 5px;"><div style="display: flex; flex-direction: column;"><span>Internet Culture</span> <span>(Viral)</span></div></span>
+                                 </span><span><svg class="dropdown-icons" fill="currentColor" height="20" icon-name="caret-down-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13.02a.755.755 0 0 1-.53-.22L4.912 8.242A.771.771 0 0 1 4.93 7.2a.771.771 0 0 1 1.042-.018L10 11.209l4.028-4.027a.771.771 0 0 1 1.042.018.771.771 0 0 1 .018 1.042L10.53 12.8a.754.754 0 0 1-.53.22Z"></path>
+                            </svg></span></span>
+            
+                            
+                    </summary>
+                    
+                    <div class="category-border"><span class="header categories">Amazing</span></div>
+                    <div class="category-border"><span class="header categories">Animals & Pets</span></div>
+                    <div class="category-border"><span class="header categories">Cringe & Facepalm</span></div>
+                    <div class="category-border"><span class="header categories">Funny</span></div>
+                    <div class="category-border"><span class="header categories">Interesting</span></div>
+                    <div class="category-border"><span class="header categories">Memes</span></div>
+                    <div class="category-border"><span class="header categories">Oddly Satisfying</span></div>
+                    <div class="category-border"><span class="header categories">Reddit Meta</span></div>
+                    <div class="category-border"><span class="header categories">Wholesome & Heartwarming</span></div>
+                   
+                    </details>
+                    
+                </div>
+                 <div>
+                    <details class="sub-details">
+                        <summary class="dropdown-headers">
+                            <span class="header2" style="font-size: 13px;"><span>
+                                <svg rpl="" fill="currentColor" height="20" icon-name="topic-videogaming-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="cz-color-15328475">
+                            <path d="M19.929 14.17 18.277 6.6a4.631 4.631 0 0 0-4.52-3.6H5.702a4.623 4.623 0 0 0-4.58 3.908L.034 14.387a3.134 3.134 0 0 0 .735 2.5 3.227 3.227 0 0 0 5.553-1.284l.39-1.635h5.794l.39 1.635A3.2 3.2 0 0 0 16.01 18h.782a3.211 3.211 0 0 0 3.123-2.444c.109-.455.114-.929.015-1.386Zm-1.6 1.85a1.964 1.964 0 0 1-1.54.73h-.781a1.947 1.947 0 0 1-1.9-1.453l-.63-2.476H5.74L5.11 15.3a1.947 1.947 0 0 1-1.9 1.453 1.974 1.974 0 0 1-1.5-.678 1.862 1.862 0 0 1-.443-1.506l1.09-7.481A3.366 3.366 0 0 1 5.7 4.25h8.062a3.373 3.373 0 0 1 3.3 2.614l1.65 7.573a1.877 1.877 0 0 1-.383 1.583h-.001Z" class="cz-color-15328475"></path><path d="M6.256 6.212h-1.25v1.776h-1.73v1.25h1.73v1.622h1.25V9.238h1.73v-1.25h-1.73V6.212Z" class="cz-color-15328475"></path><path d="M11.82 8.81a1 1 0 1 0 1.71.71 1.001 1.001 0 0 0-.3-.71 1.034 1.034 0 0 0-1.41 0Z" class="cz-color-15328475"></path><path d="M15.23 6.85a.875.875 0 0 0-.32-.22c-.246-.1-.522-.1-.77 0a.875.875 0 0 0-.32.22.975.975 0 0 0 0 1.41 1 1 0 0 0 1.41 0 1.03 1.03 0 0 0 .22-1.09.877.877 0 0 0-.22-.32Z" class="cz-color-15328475"></path>
+                            </svg><span style="margin-left: 5px;">Games</span>
+
+                            </span> <svg class="dropdown-icons" fill="currentColor" height="20" icon-name="caret-down-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13.02a.755.755 0 0 1-.53-.22L4.912 8.242A.771.771 0 0 1 4.93 7.2a.771.771 0 0 1 1.042-.018L10 11.209l4.028-4.027a.771.771 0 0 1 1.042.018.771.771 0 0 1 .018 1.042L10.53 12.8a.754.754 0 0 1-.53.22Z"></path>
+                            </svg></span>
+            
+                            
+                    </summary>
+                    
+                    <div class="category-border"><span class="header categories">Action Games</span></div>
+                    <div class="category-border"><span class="header categories">Adventure Games</span></div>
+                    <div class="category-border"><span class="header categories">Esports</span></div>
+                    <div class="category-border"><span class="header categories">Game Consoles & Gear</span></div>
+                    <div class="category-border"><span class="header categories">Gaming News & Discussions</span></div>
+                    <div class="category-border"><span class="header categories">Mobile Games</span></div>
+                    <div class="category-border"><span class="header categories">Role-Playing Games</span></div>
+                    <div class="category-border"><span class="header categories">Simulation Games</span></div>
+                    <div class="category-border"><span class="header categories">Sports & Racing Games</span></div>
+                    <div class="category-border"><span class="header categories">Strategy Games</span></div>
+                    <div class="category-border"><span class="header categories">Tabletop Games</span></div>
+                   
+                    </details>
+                </div>
+                    
+                <div>
+                    <details class="sub-details">
+                        <summary class="dropdown-headers">
+                            
+                            <span class="header2" style="font-size: 13px;"><span>
+                                <svg rpl="" fill="currentColor" height="20" icon-name="topic-help-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.45 13.95a1.033 1.033 0 0 1-.71-.29 1.014 1.014 0 0 1 0-1.42 1.033 1.033 0 0 1 1.409 0 1 1 0 0 1-.699 1.71Zm.689-9.9A4.987 4.987 0 0 0 7.111 5a.853.853 0 0 0-.1 1.313l.065.061a.832.832 0 0 0 1.085.026 2.987 2.987 0 0 1 1.752-.658c.8 0 1.245.371 1.245.9 0 .649-.331.94-1.059 1.351a2.772 2.772 0 0 0-1.333 1.481c-.058.14-.089.288-.093.439 0 .252.099.494.276.673a.89.89 0 0 0 .665.266.913.913 0 0 0 .661-.265.925.925 0 0 0 .227-.422c0-.006.046-.261.046-.267.095-.479.365-.733 1.141-1.134a2.452 2.452 0 0 0 1.562-2.29c-.001-1.405-1.1-2.424-3.112-2.424ZM13.376 16h2A4.626 4.626 0 0 0 20 11.379V5.621A4.626 4.626 0 0 0 15.379 1H4.621A4.626 4.626 0 0 0 0 5.621v5.758A4.626 4.626 0 0 0 4.621 16H7.5v-1.25H4.621a3.375 3.375 0 0 1-3.371-3.371V5.621A3.375 3.375 0 0 1 4.621 2.25h10.758a3.375 3.375 0 0 1 3.371 3.371v5.758a3.376 3.376 0 0 1-3.371 3.371h-2.5l-3.763 3.607.866.9L13.376 16Z"></path>
+                                </svg>
+                                Q&As</span> <span><svg class="dropdown-icons" fill="currentColor" height="20" icon-name="caret-down-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13.02a.755.755 0 0 1-.53-.22L4.912 8.242A.771.771 0 0 1 4.93 7.2a.771.771 0 0 1 1.042-.018L10 11.209l4.028-4.027a.771.771 0 0 1 1.042.018.771.771 0 0 1 .018 1.042L10.53 12.8a.754.754 0 0 1-.53.22Z"></path>
+                            </svg></span></span>
+                           
+                    </summary>
+                    
+                    <div class="category-border"><span class="header categories">Q&As</span></div>
+                    
+                    <div class="category-border"><span class="header categories">Stories & Confessions</span></div>
+            
+                    </details>
+                </div>
+
+                <div>
+                    <details class="sub-details">
+                        <summary class="dropdown-headers">
+                            <span class="header2" style="font-size: 13px;"><span>
+                                <svg rpl="" fill="currentColor" height="20" icon-name="topic-technology-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="cz-color-15328475">
+                            <path d="M11.875 7h-3.75A1.127 1.127 0 0 0 7 8.125v3.75A1.127 1.127 0 0 0 8.125 13h3.75A1.127 1.127 0 0 0 13 11.875v-3.75A1.127 1.127 0 0 0 11.875 7Zm-.125 4.75h-3.5v-3.5h3.5v3.5Z" class="cz-color-15328475"></path><path d="M19 7.625v-1.25h-2v-1.75A1.627 1.627 0 0 0 15.375 3h-1.75V1h-1.25v2h-1.75V1h-1.25v2h-1.75V1h-1.25v2h-1.75A1.627 1.627 0 0 0 3 4.625v1.75H1v1.25h2v1.75H1v1.25h2v1.75H1v1.25h2v1.75A1.627 1.627 0 0 0 4.625 17h1.75v2h1.25v-2h1.75v2h1.25v-2h1.75v2h1.25v-2h1.75A1.627 1.627 0 0 0 17 15.375v-1.75h2v-1.25h-2v-1.75h2v-1.25h-2v-1.75h2Zm-3.25 7.75a.375.375 0 0 1-.375.375H4.625a.375.375 0 0 1-.375-.375V4.625a.375.375 0 0 1 .375-.375h10.75a.375.375 0 0 1 .375.375v10.75Z" class="cz-color-15328475"></path>
+                            </svg>
+                                
+                                Technology</span> <span><svg class="dropdown-icons" fill="currentColor" height="20" icon-name="caret-down-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13.02a.755.755 0 0 1-.53-.22L4.912 8.242A.771.771 0 0 1 4.93 7.2a.771.771 0 0 1 1.042-.018L10 11.209l4.028-4.027a.771.771 0 0 1 1.042.018.771.771 0 0 1 .018 1.042L10.53 12.8a.754.754 0 0 1-.53.22Z"></path>
+                            </svg></span></span>
+            
+                            
+                    </summary>
+                    
+                    <div class="category-border"><span class="header categories">3D Printing</span></div>
+                    <div class="category-border"><span class="header categories">Artificial Intelligence & Machine Learning</span></div>
+                    <div class="category-border"><span class="header categories">Computers & Hardware</span></div>
+                    <div class="category-border"><span class="header categories">Consumer electronics</span></div>
+                    <div class="category-border"><span class="header categories">Diy Electronics</span></div>
+                    <div class="category-border"><span class="header categories">Programming</span></div>
+                    <div class="category-border"><span class="header categories">Software & Apps</span></div>
+                    <div class="category-border"><span class="header categories">Streaming Services</span></div>
+                    <div class="category-border"><span class="header categories">Tech News & Discussion</span></div>
+                    <div class="category-border"><span class="header categories">Virtual & Augmented Reality</span></div>
+        
+                    </details>
+                </div>
+
+
+                  <div>
+                    <details class="sub-details">
+                        <summary class="dropdown-headers">
+                             <span class="header2" style="font-size: 13px;"><span>
+                                <svg rpl="" fill="currentColor" height="20" icon-name="topic-celebrity-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 13.979a3.003 3.003 0 0 1-2.772-1.85 2.993 2.993 0 0 1 2.187-4.086 3.004 3.004 0 0 1 3.08 1.274 2.994 2.994 0 0 1-.373 3.784A3.003 3.003 0 0 1 10 13.98Zm0-4.745a1.752 1.752 0 0 0-1.617 1.08 1.746 1.746 0 0 0 1.275 2.383 1.752 1.752 0 0 0 2.092-1.715A1.748 1.748 0 0 0 10 9.234ZM15.5 19.497c-.15 0-.3-.03-.438-.09L10 17.235l-5.063 2.172a1.103 1.103 0 0 1-1.447-.555 1.097 1.097 0 0 1-.092-.558l.512-5.456L.274 8.724a1.098 1.098 0 0 1 .588-1.798l5.377-1.199 2.813-4.719a1.14 1.14 0 0 1 1.9 0l2.809 4.713 5.378 1.199a1.1 1.1 0 0 1 .838 1.294c-.038.187-.125.36-.25.504l-3.64 4.114.51 5.455a1.097 1.097 0 0 1-1.1 1.204l.004.006ZM10 15.977c.15 0 .298.03.436.088l4.894 2.097-.494-5.272a1.099 1.099 0 0 1 .27-.829l3.515-3.975-5.194-1.16a1.101 1.101 0 0 1-.71-.515L10 1.858 7.28 6.414a1.1 1.1 0 0 1-.707.512L1.38 8.086l3.515 3.975a1.098 1.098 0 0 1 .27.832l-.494 5.27 4.894-2.098c.138-.059.286-.089.436-.088Z"></path>
+                                </svg>
+                                
+                                Pop Culture</span> <span><svg class="dropdown-icons" fill="currentColor" height="20" icon-name="caret-down-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13.02a.755.755 0 0 1-.53-.22L4.912 8.242A.771.771 0 0 1 4.93 7.2a.771.771 0 0 1 1.042-.018L10 11.209l4.028-4.027a.771.771 0 0 1 1.042.018.771.771 0 0 1 .018 1.042L10.53 12.8a.754.754 0 0 1-.53.22Z"></path>
+                            </svg></span></span>
+            
+                          
+                    </summary>
+                    
+                    <div class="category-border"><span class="header categories">Celebrities</span></div>
+                    <div class="category-border"><span class="header categories">Creators & Influencers</span></div>
+                    <div class="category-border"><span class="header categories">Generations & Nostalgia</span></div>
+                    <div class="category-border"><span class="header categories">Podcasts</span></div>
+                    <div class="category-border"><span class="header categories">Streamers</span></div>
+                    <div class="category-border"><span class="header categories">Tarot & Astrology</span></div>
+
+            
+                    </details>
+                </div>
+
+                  <div>
+                    <details class="sub-details">
+                        <summary class="dropdown-headers">
+                             <span class="header2" style="font-size: 13px;"><span>
+                                <svg rpl="" fill="currentColor" height="20" icon-name="topic-movies-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.375 8H6.45L17.3 5.093a.625.625 0 0 0 .44-.765L16.709.464a.62.62 0 0 0-.522-.459.616.616 0 0 0-.244.017L.488 4.162a.624.624 0 0 0-.441.766l.969 3.618A.527.527 0 0 0 1 8.625v8.75A2.629 2.629 0 0 0 3.625 20h12.75A2.628 2.628 0 0 0 19 17.375v-8.75A.625.625 0 0 0 18.375 8ZM8.06 6.275l-2.75.737v-2.7a.61.61 0 0 0-.028-.135l2.778-.744v2.842Zm1.25-3.182 2.75-.737V5.2l-2.75.737V3.093Zm7.063.954-3.063.82V2.022l2.35-.63.713 2.656ZM4.06 4.5v2.807c0 .013.006.025.007.038l-1.94.52-.712-2.657L4.06 4.5ZM17.75 17.375a1.377 1.377 0 0 1-1.375 1.375H3.625a1.377 1.377 0 0 1-1.375-1.375V9.25h15.5v8.125Z"></path>
+                                 </svg>
+      
+                                Movies & TV</span> <span><svg class="dropdown-icons" fill="currentColor" height="20" icon-name="caret-down-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13.02a.755.755 0 0 1-.53-.22L4.912 8.242A.771.771 0 0 1 4.93 7.2a.771.771 0 0 1 1.042-.018L10 11.209l4.028-4.027a.771.771 0 0 1 1.042.018.771.771 0 0 1 .018 1.042L10.53 12.8a.754.754 0 0 1-.53.22Z"></path>
+                            </svg></span></span>
+            
+                            
+                    </summary>
+                    
+                    <div class="category-border"><span class="header categories">Action Movies & Series</span></div>
+                    <div class="category-border"><span class="header categories">Animated Movies & Series</span></div>
+                    <div class="category-border"><span class="header categories">Generations & Nostalgia</span></div>
+                    <div class="category-border"><span class="header categories">Comedy Movies & Series</span></div>
+                    <div class="category-border"><span class="header categories">Crime, Mystery, & Thriller Movies & Series</span></div>
+                    <div class="category-border"><span class="header categories">Documentary Movies & Series</span></div>
+                    <div class="category-border"><span class="header categories">Drama Movies & Series</span></div>
+                    <div class="category-border"><span class="header categories">Fantasy Movies & Series</span></div>
+                    <div class="category-border"><span class="header categories">Horror Movies & Series</span></div>
+                    <div class="category-border"><span class="header categories">Movie News & Discussion</span></div>
+                    <div class="category-border"><span class="header categories">Reality TV</span></div>
+                    <div class="category-border"><span class="header categories">Romance Movies & Series</span></div>
+                    <div class="category-border"><span class="header categories">Sci-Fi Movies & Series</span></div>
+                    <div class="category-border"><span class="header categories">Superhero Movies & Series</span></div>
+                    <div class="category-border"><span class="header categories">TV News & Discussion</span></div>
+
+                    </details>
+                </div>
+
+                <div>
+                    <details class="sub-details SEEMORE">
+                        <summary class="dropdown-headers">
+                           <span class="header see-more" style="font-size: 11px; width: 60px; border-radius: 50px;height: 20px;padding: 12px;"><b>See more</b></span>
+            
+                    </summary>
+                    
+                    <div><span class="header categories">Action Movies & Series</span></div>
+                    <div><span class="header categories">Animated Movies & Series</span></div>
+                    <div><span class="header categories">Generations & Nostalgia</span></div>
+                    <div><span class="header categories">Comedy Movies & Series</span></div>
+                    <div><span class="header categories">Crime, Mystery, & Thriller Movies & Series</span></div>
+                    <div><span class="header categories">Documentary Movies & Series</span></div>
+                    <div><span class="header categories">Drama Movies & Series</span></div>
+                    <div><span class="header categories">Fantasy Movies & Series</span></div>
+                    <div><span class="header categories">Horror Movies & Series</span></div>
+                    <div><span class="header categories">Movie News & Discussion</span></div>
+                    <div><span class="header categories">Reality TV</span></div>
+                    <div><span class="header categories">Romance Movies & Series</span></div>
+                    <div><span class="header categories">Sci-Fi Movies & Series</span></div>
+                    <div><span class="header categories">Superhero Movies & Series</span></div>
+                    <div><span class="header categories">TV News & Discussion</span></div>
+                    <span class="header see-less" style="font-size: 11px; width: 60px; border-radius: 50px;height: 20px;padding: 12px;"><b>See less</b></span>
+
+                    </details>
+                </div>
+           
+           
+                </details>
+               
+
+            <hr style="width: 100%;border-color: hsla(0, 0%, 100%, 0.123);">
+
+
+             <details class="details">
+                <summary class="dropdown-header">
+                   <span class="header2" style="color: #748791;">Resources
+                    <svg class="dropdown-icon" fill="currentColor" height="20" icon-name="caret-down-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 13.02a.755.755 0 0 1-.53-.22L4.912 8.242A.771.771 0 0 1 4.93 7.2a.771.771 0 0 1 1.042-.018L10 11.209l4.028-4.027a.771.771 0 0 1 1.042.018.771.771 0 0 1 .018 1.042L10.53 12.8a.754.754 0 0 1-.53.22Z"></path>
+                    </svg>
+                   </span>
+                   
+                </summary>
+            
+                <div>
+                    <details class="sub-details">
+                        <summary class="dropdown-headers">
+                            <span class="header" style="font-size: 13px;"><svg rpl="" fill="currentColor" height="20" icon-name="admin-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="cz-color-15328475">
+                            <path d="M19.938 9.211a3.25 3.25 0 0 0-3.177-2.642c-.45 0-.895.102-1.3.3a10.812 10.812 0 0 0-4.838-1.379l.81-3.741 2.444.519a1.492 1.492 0 1 0 .2-1.235L11.572.5a1.13 1.13 0 0 0-1.333.862L9.343 5.5a10.77 10.77 0 0 0-4.791 1.357 3.214 3.214 0 0 0-1.315-.289A3.248 3.248 0 0 0 .064 9.2c-.079.4-.085.812-.018 1.214a3.23 3.23 0 0 0 .912 1.754l.066.071v.127c.076 3.69 4.013 6.582 8.975 6.582 4.961 0 8.89-2.889 8.965-6.567l.006-.138.044-.046a3.252 3.252 0 0 0 .939-1.778c.067-.4.062-.81-.015-1.208Zm-1.221 1c-.075.42-.282.805-.59 1.1l-.392.407-.024.625c-.061 3-3.45 5.354-7.716 5.354-4.267 0-7.66-2.353-7.717-5.371l-.024-.6-.4-.433c-.3-.293-.5-.674-.571-1.087a2.138 2.138 0 0 1 .012-.765 2 2 0 0 1 1.942-1.623c.353.003.698.102 1 .286l.337.216.334-.22a9.435 9.435 0 0 1 4.758-1.381h.719a9.427 9.427 0 0 1 4.726 1.4l.347.225.343-.232a1.7 1.7 0 0 1 .96-.3 2 2 0 0 1 1.949 1.629c.049.253.051.512.007.766v.004Z" class="cz-color-15328475"></path>
+                            </svg>About Reddit</span>
+            
+                    </summary>
+                    
+                  
+                    </details>
+                    
+                </div>
+                 <div>
+                    <details class="sub-details">
+                        <summary class="dropdown-headers">
+                            <span class="header" style="font-size: 13px;"><svg rpl="" fill="currentColor" height="20" icon-name="topic-activism-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="cz-color-15328475">
+                            <path d="M15.175 13.11c-.237.462-.428.6-.514.627l-.133-.035c-.439-.238-1.278-2.03-1.278-5.2 0-2.95.729-4.718 1.184-5.144l.245-.087c.095.042.276.192.5.62l.284.556 1.113-.57-.285-.556c-.541-1.057-1.17-1.3-1.618-1.316h-.044a1.4 1.4 0 0 0-.754.23L3.7 5.852c-.915-.552-1.847-.991-2.61-.58C.237 5.735.044 6.98 0 9c.047 2 .24 3.245 1.093 3.7.783.423 1.754-.06 2.7-.637.288.1.685.218 1.224.37v4.347a1.122 1.122 0 0 0 1.121 1.12h2.75a1.123 1.123 0 0 0 1.122-1.12v-3l4.028 1.075c.183.088.384.134.587.135.45 0 1.1-.23 1.661-1.32l.285-.555-1.113-.57-.283.566Zm-11.882-2.2c-1.247.782-1.546.734-1.607.7C1.6 11.56 1.3 11.229 1.25 9c.049-2.25.345-2.582.434-2.63.064-.033.361-.081 1.61.7a.624.624 0 0 0 .54.058l8.838-3.146A13.9 13.9 0 0 0 12 8.5c-.034 1.608.221 3.21.754 4.728L3.79 10.834a.622.622 0 0 0-.497.073v.004Zm2.97 5.753v-3.877c.678.184 1.507.405 2.5.67v3.2l-2.5.007ZM19.25 8v1.25H16V8h3.25Zm-3.477-2.674 2.82-1.594.615 1.088-2.819 1.594-.616-1.088Zm.616 5.26 2.819 1.594-.615 1.088-2.82-1.594.616-1.088Z" class="cz-color-15328475"></path>
+                            </svg>Advertise</span>
+            
+                           
+                    </summary>
+                   
+                    </details>
+                </div>
+                    
+                <div>
+                    <details class="sub-details">
+                        <summary class="dropdown-headers">
+                            <span class="header" style="font-size: 13px;"><svg rpl="" fill="currentColor" height="20" icon-name="statistics-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="cz-color-15328475">
+                            <path d="M3 16H1.75v-6H3v6Zm5-9H6.75v9H8V7Zm5-3h-1.25v12H13V4Zm5-3h-1.25v15H18V1ZM1.01 17.75V19h17.9v-1.25H1.01Z" class="cz-color-15328475"></path>
+                            </svg>Reddit Pro <span class="beta">BETA</span></span>
+            
+                    </summary>
+                    
+                    </details>
+                </div>
+
+                <div>
+                    <details class="sub-details">
+                        <summary class="dropdown-headers">
+                            <span class="header" style="font-size: 13px;"><svg rpl="" fill="currentColor" height="20" icon-name="help-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="cz-color-15328475">
+                            <path d="M10 20a10 10 0 1 1 10-10 10.011 10.011 0 0 1-10 10Zm0-18.75A8.75 8.75 0 1 0 18.75 10 8.76 8.76 0 0 0 10 1.25Zm1.611 4.058a2.4 2.4 0 0 1 .994.861c.241.375.366.812.359 1.258a2.04 2.04 0 0 1-.167.854c-.1.229-.238.439-.407.622-.2.208-.413.404-.636.588-.223.188-.4.348-.533.483a1.754 1.754 0 0 0-.328.464 1.326 1.326 0 0 0-.13.591v.78H9.328v-.759a2.216 2.216 0 0 1 .601-1.572c.204-.21.421-.406.65-.588.209-.173.373-.316.492-.431a1.52 1.52 0 0 0 .3-.4 1.154 1.154 0 0 0-.058-1.128 1.192 1.192 0 0 0-.485-.421 1.525 1.525 0 0 0-.677-.151 1.545 1.545 0 0 0-.721.168 1.3 1.3 0 0 0-.713 1.131H7.256a2.628 2.628 0 0 1 1.381-2.293A3.132 3.132 0 0 1 10.175 5c.496-.008.987.097 1.436.308Zm-2.164 9.843a1.088 1.088 0 0 1-.386-.385 1.034 1.034 0 0 1-.144-.537c-.002-.186.048-.37.144-.53.094-.16.227-.293.386-.387a1.03 1.03 0 0 1 .53-.143 1.062 1.062 0 0 1 .926 1.597c-.096.159-.23.291-.389.385a1.034 1.034 0 0 1-.537.144 1.021 1.021 0 0 1-.53-.144Z" class="cz-color-15328475"></path>
+                            </svg>Help</span>
+            
+                    </summary>
+                    
+            
+                    </details>
+                </div>
+
+
+                  <div>
+                    <details class="sub-details">
+                        <summary class="dropdown-headers">
+                            <span class="header" style="font-size: 13px;">
+                                <svg rpl="" fill="currentColor" height="20" icon-name="topic-reading-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="cz-color-15328475">
+                                <path d="M19.375 2h-7.292A2.688 2.688 0 0 0 10 3a2.688 2.688 0 0 0-2.083-1H.625A.625.625 0 0 0 0 2.625v14.75A.625.625 0 0 0 .625 18h7.917v-1.25H1.25V3.25h6.667a1.465 1.465 0 0 1 1.458 1.469v11.093h1.25V4.719a1.465 1.465 0 0 1 1.458-1.469h6.667v13.5h-6.667a2.64 2.64 0 0 0-2.708 2.625V20h1.25v-.625A1.388 1.388 0 0 1 12.083 18h7.292a.624.624 0 0 0 .625-.625V2.625A.625.625 0 0 0 19.375 2Z" class="cz-color-15328475"></path>
+                                </svg>
+                                Blog
+                            </span>
+            
+                    </summary>
+                    
+                    </details>
+                </div>
+
+                  <div>
+                    <details class="sub-details">
+                        <summary class="dropdown-headers">
+                            <span class="header" style="font-size: 13px;"><svg rpl="" fill="currentColor" height="20" icon-name="topic-careers-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="cz-color-15328475">
+                            <path d="M9.784 12.331a7 7 0 0 0 1.165.6l-6.174 6.178a2.747 2.747 0 0 1-3.883-3.884l6.18-6.181c.162.409.362.8.6 1.171l-5.897 5.894a1.5 1.5 0 0 0 0 2.116 1.533 1.533 0 0 0 2.118 0l5.891-5.894Zm4.481-.309a5.7 5.7 0 0 0 4.671-3.953 5.372 5.372 0 0 0-.1-3.538 1.116 1.116 0 0 0-.813-.7 1.127 1.127 0 0 0-1.039.305L14.118 7A.807.807 0 0 1 13 7a.79.79 0 0 1 0-1.116l2.864-2.863a1.127 1.127 0 0 0 .3-1.04 1.112 1.112 0 0 0-.7-.812 5.363 5.363 0 0 0-3.539-.1 5.7 5.7 0 0 0-3.946 4.666 5.627 5.627 0 0 0 6.287 6.287Zm.58-9.75L12.117 5a2.043 2.043 0 0 0 0 2.884 2.088 2.088 0 0 0 2.883 0l2.727-2.726c.271.825.276 1.714.013 2.542a4.432 4.432 0 0 1-3.628 3.079A4.377 4.377 0 0 1 9.22 5.887a4.429 4.429 0 0 1 4.342-3.822c.437 0 .87.07 1.284.207Z" class="cz-color-15328475"></path>
+                            </svg>Careers</span>
+            
+                           
+                    </summary>
+                    
+
+                    </details>
+
+                    <details class="sub-details">
+                        <summary class="dropdown-headers">
+                            <span class="header" style="font-size: 13px;"><svg rpl="" fill="currentColor" height="20" icon-name="author-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="cz-color-15328475">
+                            <path d="M15.128 0a4.78 4.78 0 0 0-4.774 4.774c.007.214.029.427.065.638l-.137-.138a1.143 1.143 0 0 0-1.719.126L.461 16.2a2.315 2.315 0 0 0 3.241 3.24l10.8-8.1a1.14 1.14 0 0 0 .122-1.718l-.138-.138c.212.036.426.058.64.065a4.773 4.773 0 1 0 0-9.547L15.128 0ZM2.955 18.445a1.07 1.07 0 0 1-1.5-1.5L9.487 6.239l4.175 4.176-10.707 8.03ZM15.128 8.3a3.53 3.53 0 1 1 0-7.06 3.53 3.53 0 0 1 0 7.06Zm-7.186 2.78L10.018 9l.88.88-2.077 2.08-.879-.88Z" class="cz-color-15328475"></path>
+                            </svg>Press</span>
+            
+                    </summary>
+                    </details>
+                    <hr style="width: 100%;border-color: hsla(0, 0%, 100%, 0.123);">
+                    <details class="sub-details">
+                        <summary class="dropdown-headers">
+                            <span class="header" style="font-size: 13px;"><svg rpl="" fill="currentColor" height="20" icon-name="community-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="cz-color-15328475">
+                            <path d="M9.875 7.614a2.055 2.055 0 0 0-.974.222 1.62 1.62 0 0 0-.879 1.46v4.2H6.409V6.2h1.552v.93H8c.275-.32.616-.575 1-.748.453-.207.947-.31 1.445-.3.243-.003.487.02.725.071.158.03.31.084.451.161l-.649 1.559a1.731 1.731 0 0 0-.523-.2 2.755 2.755 0 0 0-.574-.059ZM20 10A10 10 0 1 1 10 0a10.011 10.011 0 0 1 10 10Zm-1.25 0a8.722 8.722 0 0 0-2.841-6.435l-4.974 11.986H9.581l5.3-12.809A8.748 8.748 0 1 0 18.75 10Z" class="cz-color-15328475"></path>
+                            </svg>Communities</span>
+            
+                    </summary>
+                    </details>
+                      <details class="sub-details">
+                        <summary class="dropdown-headers">
+                            <span class="header" style="font-size: 13px;"><svg rpl="" fill="currentColor" height="20" icon-name="topic-history-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="cz-color-15328475">
+                            <path d="M17.625 19H2.375v-1.25h15.25V19ZM17 4.684V3.625h-1.25v1.059a4.6 4.6 0 0 1-2.8 4.215l-1.062.442a.626.626 0 0 0 0 1.155l1.055.438a4.609 4.609 0 0 1 2.81 4.219v1.222H17v-1.222a5.853 5.853 0 0 0-3.28-5.235A5.85 5.85 0 0 0 17 4.684Zm-7 9.253 2.475 2.438h1.783l-3.82-3.761a.625.625 0 0 0-.876 0l-3.8 3.761h1.763L10 13.937ZM3 3.625v1.059a5.85 5.85 0 0 0 3.28 5.234A5.852 5.852 0 0 0 3 15.153v1.222h1.25v-1.222a4.6 4.6 0 0 1 2.8-4.215l1.065-.438a.626.626 0 0 0 0-1.155L7.06 8.9a4.609 4.609 0 0 1-2.81-4.216V3.625H3ZM17.625 1H2.375v1.25h15.25V1Z" class="cz-color-15328475"></path>
+                            </svg>Best of Reddit</span>
+            
+                    </summary>
+
+                    </details>
+                      <details class="sub-details">
+                        <summary class="dropdown-headers">
+                            <span class="header" style="font-size: 13px;">
+                                <svg rpl="" fill="currentColor" height="20" icon-name="topic-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" class="cz-color-15328475">
+                                <path d="m19.567 18.683-2.194-2.194a3.508 3.508 0 1 0-.884.885l2.194 2.193.884-.884ZM14.5 16.75a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5ZM5.5 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm0 5.75a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5ZM12.125 9h4.75A1.127 1.127 0 0 0 18 7.875v-4.75A1.127 1.127 0 0 0 16.875 2h-4.75A1.127 1.127 0 0 0 11 3.125v4.75A1.127 1.127 0 0 0 12.125 9Zm.125-5.75h4.5v4.5h-4.5v-4.5ZM7.875 11h-4.75A1.127 1.127 0 0 0 2 12.125v4.75A1.127 1.127 0 0 0 3.125 18h4.75A1.127 1.127 0 0 0 9 16.875v-4.75A1.127 1.127 0 0 0 7.875 11Zm-.125 5.75h-4.5v-4.5h4.5v4.5Z" class="cz-color-15328475"></path>
+                                </svg>Topics</span>
+            
+                    </summary>
+                    </details>
+
+                </div>
+
+                </div>
+           
+                </details>
+
+             </div>
+
+              <div>
+                   
+       </div>
+        
+    </aside>
+    <main id="main-content"><form action="index.html" method="GET">
+        <div class="overlay" id="main-overlay" style="position: absolute;"></div>
+        <div class="main-wrapper">
+            <div class="carousel">
+                
+                <svg class="arrow" id="right-arrow" fill="currentColor" height="16" icon-name="right-fill" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$24912279$--><!--?lit$24912279$--><path d="m7.207 19.707-1.414-1.414L14.086 10 5.793 1.707 7.207.293l9 9a1 1 0 0 1 0 1.414l-9 9Z"></path><!--?--> </svg>
+                <svg class="arrow" style="display:none;" id="left-arrow" fill="currentColor" height="16" icon-name="left-fill" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$24912279$--><!--?lit$24912279$--><path d="m12.793 19.707-9-9a1 1 0 0 1 0-1.414l9-9 1.414 1.414L5.914 10l8.293 8.293-1.414 1.414Z"></path><!--?--> </svg>
+                
+                <div class="scroll-content">
+                <!----1<!-->
+                <div class="carousel-instance">
+                    <div class="carousel-overlay"></div>
+                   
+                    <img loading="lazy" class="carousel-image" src="https://external-preview.redd.it/iran-rules-out-us-talks-unless-israel-halts-strikes-v0-7QDkFSYiBcxxYot-ChmTEeK1k8V2z4Zgv-p6kc-Bbg4.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=25aa38a0112068d330ba1a5fd9ad3747721222e2" srcset="https://external-preview.redd.it/iran-rules-out-us-talks-unless-israel-halts-strikes-v0-7QDkFSYiBcxxYot-ChmTEeK1k8V2z4Zgv-p6kc-Bbg4.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=25aa38a0112068d330ba1a5fd9ad3747721222e2 320w, https://external-preview.redd.it/iran-rules-out-us-talks-unless-israel-halts-strikes-v0-7QDkFSYiBcxxYot-ChmTEeK1k8V2z4Zgv-p6kc-Bbg4.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=3f7ba25182fdb13d2290aae3a8daaae0e1ddc1fc 640w, https://external-preview.redd.it/iran-rules-out-us-talks-unless-israel-halts-strikes-v0-7QDkFSYiBcxxYot-ChmTEeK1k8V2z4Zgv-p6kc-Bbg4.jpeg?width=1080&amp;crop=smart&amp;auto=webp&amp;s=db13d20fe7abb112ab021442bfed1688b91e195a 1080w" sizes="280px" alt="r/worldnews - Iran rules out US talks unless Israel halts strikes" class="absolute h-100 w-100 pointer-events-none object-cover m-0">
+                    <h4 class="carousel-header">Isreal-Iran Conflict</h4>
+                    <span class="carousel-description">Iran rules out US talks unless Israel halts strikes</span>
+                    <div class="source">
+                        <img src="https://styles.redditmedia.com/t5_2cneq/styles/communityIcon_fy84mdgh75201.jpg?width=48&amp;height=48&amp;frame=1&amp;auto=webp&amp;crop=48:48,smart&amp;s=472bd1c805e4b619700ab09f74e694a5cd850341" alt="r/politics icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="24" style="color: #205493;background: #205493;width: 24px;" loading="lazy">
+                        r/ politics <span style="color: #82A2AD;">and more</span>
+                    </div>
+                </div>
+                <!----2<!-->
+                <div class="carousel-instance">
+                    <div class="carousel-overlay"></div>
+                   
+                    <img loading="lazy" class="carousel-image" src="https://preview.redd.it/fedex-founder-fred-smith-has-passed-away-he-was-80-v0-3wijmchzae8f1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=a1079bfd4f37788ff81d2962f457a0dba191596f" srcset="https://preview.redd.it/fedex-founder-fred-smith-has-passed-away-he-was-80-v0-3wijmchzae8f1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=a1079bfd4f37788ff81d2962f457a0dba191596f 320w, https://preview.redd.it/fedex-founder-fred-smith-has-passed-away-he-was-80-v0-3wijmchzae8f1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=4766d703927bc4ba1c3cc1496245afdd939e11d1 640w, https://preview.redd.it/fedex-founder-fred-smith-has-passed-away-he-was-80-v0-3wijmchzae8f1.jpeg?width=1080&amp;crop=smart&amp;auto=webp&amp;s=4d79154cd0a13d09db2e93441607f0e7b23daba3 1080w" sizes="280px" alt="r/aviation - FedEx founder Fred Smith has passed away. He was 80" class="absolute h-100 w-100 pointer-events-none object-cover m-0">
+                    <h4 class="carousel-header">FedEX founder dead at 80</h4>
+                    <span class="carousel-description">FedEx founder Fred Smith has passed away. He was 80</span>
+                    <div class="source">
+                       <img src="https://styles.redditmedia.com/t5_2qhu8/styles/communityIcon_nww3eaaozf5c1.png?width=48&amp;height=48&amp;frame=1&amp;auto=webp&amp;crop=48:48,smart&amp;s=bc809ebf2e3ea3ca8a05a9a7635a7a2b1d8cc269" alt="r/aviation icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="24" style="width: 24px;" loading="lazy">
+                        r/ aviation <span style="color: #82A2AD;">and more</span>
+                    </div>
+                </div>
+                <!--3-->
+                <div class="carousel-instance">
+                    <div class="carousel-overlay"></div>
+                   
+                    <img loading="lazy" class="carousel-image" src="https://preview.redd.it/trend-news-v0-rnrp12ugl46c1.png?width=320&amp;crop=smart&amp;auto=webp&amp;s=5ea164e4402c6cf50d952839b859bb95523df340" srcset="https://preview.redd.it/trend-news-v0-rnrp12ugl46c1.png?width=320&amp;crop=smart&amp;auto=webp&amp;s=5ea164e4402c6cf50d952839b859bb95523df340 320w, https://preview.redd.it/trend-news-v0-rnrp12ugl46c1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=17002efd6c6b5e048de0e40c75d117d6bed07d31 640w, https://preview.redd.it/trend-news-v0-rnrp12ugl46c1.png?width=1080&amp;crop=smart&amp;auto=webp&amp;s=200e12ae5b4cc824efaa74f23dd5e1d347c91647 1080w" sizes="280px" alt="r/politics - Megathread: US President Trump Says That The US Military Has Bombed Multiple Iranian Nuclear Sites" class="absolute h-100 w-100 pointer-events-none object-cover m-0">
+                    <h4 class="carousel-header">
+                    <h4 class="carousel-header">US bombs Iran nuclear sites</h4>
+                    <span class="carousel-description"> Megathread: US President Trump Says That The US Military Has Bombed Multiple Iranian Nuclear Sites</span>
+                    <div class="source">
+                       <img src="https://styles.redditmedia.com/t5_2qhu8/styles/communityIcon_nww3eaaozf5c1.png?width=48&amp;height=48&amp;frame=1&amp;auto=webp&amp;crop=48:48,smart&amp;s=bc809ebf2e3ea3ca8a05a9a7635a7a2b1d8cc269" alt="r/aviation icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="24" style="width: 24px;" loading="lazy">
+                        r/ politics <span style="color: #82A2AD;">and more</span>
+                    </div>
+                </div>
+                 <!--4-->
+                  <div class="carousel-instance">
+                    <div class="carousel-overlay"></div>
+                   
+                    <img loading="lazy" class="carousel-image" src="https://external-preview.redd.it/here-is-the-full-video-of-drake-and-morgan-wallen-in-houston-v0-dTJjeWJ4eTk2ZjhmMQnVF91vUr6PvL638qhIZB3SMaUxZjPq1splT4CRL6uB.png?width=320&amp;crop=smart&amp;format=pjpg&amp;auto=webp&amp;s=e1277eec41a7ac4677da210557b13ed0a2a9d98a" srcset="https://external-preview.redd.it/here-is-the-full-video-of-drake-and-morgan-wallen-in-houston-v0-dTJjeWJ4eTk2ZjhmMQnVF91vUr6PvL638qhIZB3SMaUxZjPq1splT4CRL6uB.png?width=320&amp;crop=smart&amp;format=pjpg&amp;auto=webp&amp;s=e1277eec41a7ac4677da210557b13ed0a2a9d98a 320w" sizes="280px" alt="r/Drizzy - Here is the full video of Drake and Morgan Wallen in Houston 🐐" class="absolute h-100 w-100 pointer-events-none object-cover m-0">
+                    <h4 class="carousel-header">
+                    <h4 class="carousel-header">Drake joins Morgan Wallen</h4>
+                    <span class="carousel-description">Here is the full video of Drake and Morgan Wallen in Houston 🐐</span>
+                    <div class="source">
+                       <img src="https://styles.redditmedia.com/t5_2z4xo/styles/communityIcon_sxhgw3asdgn61.png?width=48&amp;height=48&amp;frame=1&amp;auto=webp&amp;crop=48:48,smart&amp;s=00d2ff0a6b5d6bb99796561c8f119d7ebf9394e4" alt="r/Drizzy icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="24" style="color: #FB1004;background: #FB1004;width: 24px;" loading="lazy">
+                        r/ Drizzy <span style="color: #82A2AD;">and more</span>
+                    </div>
+                </div>
+                <!--5-->
+                 <div class="carousel-instance">
+                    <div class="carousel-overlay"></div>
+                   
+                    <img loading="lazy" class="carousel-image"src="https://external-preview.redd.it/john-cena-shows-off-his-punching-strength-v0-Z2ZqcWwyNnphZzhmMc-ziuk3qHZ8tom-I4JwWEPJS6BPZ1KTucaQDzouduqi.png?width=320&amp;crop=smart&amp;format=pjpg&amp;auto=webp&amp;s=3c0ea46736ad7cfea83fbb0b54fcb3a6d099d93a" srcset="https://external-preview.redd.it/john-cena-shows-off-his-punching-strength-v0-Z2ZqcWwyNnphZzhmMc-ziuk3qHZ8tom-I4JwWEPJS6BPZ1KTucaQDzouduqi.png?width=320&amp;crop=smart&amp;format=pjpg&amp;auto=webp&amp;s=3c0ea46736ad7cfea83fbb0b54fcb3a6d099d93a 320w" sizes="280px" alt="r/funny - John Cena shows off his punching strength" class="absolute h-100 w-100 pointer-events-none object-cover m-0">
+                    <h4 class="carousel-header">
+                    <h4 class="carousel-header">Cena shows 'punching' skills</h4>
+                    <span class="carousel-description">John Cena shows off his punching strength</span>
+                    <div class="source">
+                       <img src="https://a.thumbs.redditmedia.com/kIpBoUR8zJLMQlF8azhN-kSBsjVUidHjvZNLuHDONm8.png" alt="r/funny icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="24" style="color: #0DD3BB;background: #0DD3BB;width: 24px;" loading="lazy">
+                        r/ funny <span style="color: #82A2AD;">and more</span>
+                    </div>
+                </div>
+                <!--6-->
+                 <div class="carousel-instance">
+                    <div class="carousel-overlay"></div>
+                   
+                   <img loading="lazy" class="carousel-image" src="https://preview.redd.it/first-images-preview-from-the-worlds-largest-digital-camera-v0-tu7pvva37m8f1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=509d7f144cada3a38243a1b9c9ee0dd31ce935d7" srcset="https://preview.redd.it/first-images-preview-from-the-worlds-largest-digital-camera-v0-tu7pvva37m8f1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=509d7f144cada3a38243a1b9c9ee0dd31ce935d7 320w, https://preview.redd.it/first-images-preview-from-the-worlds-largest-digital-camera-v0-tu7pvva37m8f1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=7c5f4d56cd128eafbc7f9d1319fd71e002f3c2c4 640w, https://preview.redd.it/first-images-preview-from-the-worlds-largest-digital-camera-v0-tu7pvva37m8f1.jpeg?width=1080&amp;crop=smart&amp;auto=webp&amp;s=a7fad6fa4dbb7bfcac60d3ccfa309fe86312e502 1080w" sizes="280px" alt="r/spaceporn - the galaxies of light - years away." class="absolute h-100 w-100 pointer-events-none object-cover m-0">
+                    <h4 class="carousel-header">
+                    <h4 class="carousel-header">New deep space images</h4>
+                    <span class="carousel-description">FIRST IMAGES PREVIEW from the world’s largest digital camera (3,200-megapixel) at Vera C. Rubin Observatory (1)</span>
+                    <div class="source">
+                       <img src="https://styles.redditmedia.com/t5_2s9jc/styles/communityIcon_6sr0lt9559q61.png?width=48&amp;height=48&amp;frame=1&amp;auto=webp&amp;crop=48:48,smart&amp;s=361c5d1e0c9ccbd60c56fcb27f45808c2f9b14c1" alt="r/spaceporn icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="24" style="color: #373C3F;background: #373C3F;width: 24px;" loading="lazy">
+                        r/ spaceporn <span style="color: #82A2AD;">and more</span>
+                    </div>
+                </div>
+            
+            </div>
+        
+        </div>
+           <div class="bottom-section">
+            <div class="posts-wrapper" >
+                <hr style="border: 1px solid #26282A; width: 100%;"class="posts-line">
+                <div class="posts">
+                    <div class="posts-top">
+                        <div class="author">
+                            <span style="font-size: 13.5px; font-size: 12px;display: flex;gap: 5px;color: hsl(200, 13%, 70%);">
+                                <img style="margin-bottom: 10px;" src="https://styles.redditmedia.com/t5_2qh4j/styles/communityIcon_jxbrkfsppv481.png?width=48&amp;height=48&amp;frame=1&amp;auto=webp&amp;crop=48:48,smart&amp;s=cc16b00eea3068be4d4e7d2eb0beae6145cab248" alt="r/europe icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="24" style="color: #003399;background: #003399;width: 24px;" loading="lazy">
+                                <b>r/europe</b> • 5 h.ago
+                            </span>
+                            <span style="display: flex; flex-direction: row;">
+                                <button  type="button" class="Get-App" style="background-color: #115BCA; padding: 12px; height: 12px; margin-right: 10px;"><span style="font-size: 13px;">Join</span></button>
+                                <div class="more" style="margin-top: -3px;"><svg rpl="" fill="currentColor" height="16" icon-name="overflow-horizontal-fill" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$171725987$--><!--?lit$171725987$--><path d="M6 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"></path><!--?--> </svg></div>
+                            </span>
+                        </div>
+                          <div class="title">
+                            <h3 style="transform: translateY(-35px); margin-left: 15px;">140000 people estimated to have gathered at the anti-government protest last evening in Belgrade</h3>
+                        </div>
+                       
+                    </div>
+                    <div class="imgs">
+                        <div class="image-overlay"></div>
+                        <img class="blurred-image" lt="r/europe - 140000 people estimated to have gathered at the anti-government protest last evening in Belgrade" class="i18n-post-media-img preview-img media-lightbox-img max-h-[100vw] h-full w-fullobject-contain relative" loading="lazy" fetchpriority="auto" src="https://preview.redd.it/140000-people-estimated-to-have-gathered-at-the-anti-v0-dq7wfcuvtt9f1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=c2a5d1bd7b3becb58f9884930512156395ff65ea" srcset="https://preview.redd.it/140000-people-estimated-to-have-gathered-at-the-anti-v0-dq7wfcuvtt9f1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=b97d160c13bc4eb8650859e923f495d9769af12f 320w, https://preview.redd.it/140000-people-estimated-to-have-gathered-at-the-anti-v0-dq7wfcuvtt9f1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=c2a5d1bd7b3becb58f9884930512156395ff65ea 640w, https://preview.redd.it/140000-people-estimated-to-have-gathered-at-the-anti-v0-dq7wfcuvtt9f1.jpeg?width=1080&amp;crop=smart&amp;auto=webp&amp;s=794495e07807c579bb2070db0f16bb012a714574 1080w" sizes="(min-width: 1415px) 750px, (min-width: 768px) 50vw, 100vw" width="640" height="479">
+                        <img class="main-image" lt="r/europe - 140000 people estimated to have gathered at the anti-government protest last evening in Belgrade" class="i18n-post-media-img preview-img media-lightbox-img max-h-[100vw] h-full w-fullobject-contain relative" loading="lazy" fetchpriority="auto" src="https://preview.redd.it/140000-people-estimated-to-have-gathered-at-the-anti-v0-dq7wfcuvtt9f1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=c2a5d1bd7b3becb58f9884930512156395ff65ea" srcset="https://preview.redd.it/140000-people-estimated-to-have-gathered-at-the-anti-v0-dq7wfcuvtt9f1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=b97d160c13bc4eb8650859e923f495d9769af12f 320w, https://preview.redd.it/140000-people-estimated-to-have-gathered-at-the-anti-v0-dq7wfcuvtt9f1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=c2a5d1bd7b3becb58f9884930512156395ff65ea 640w, https://preview.redd.it/140000-people-estimated-to-have-gathered-at-the-anti-v0-dq7wfcuvtt9f1.jpeg?width=1080&amp;crop=smart&amp;auto=webp&amp;s=794495e07807c579bb2070db0f16bb012a714574 1080w" sizes="(min-width: 1415px) 750px, (min-width: 768px) 50vw, 100vw" width="640" height="479">
+                    </div>
+                <div style="display: flex; transform: translateY(-70px); margin-left: 20px;">
+                    <button class="Get-App" style="display: flex; justify-content: space-around;width: 100px;">
+                        <div class="more ball">
+                            <svg class="upvote react" rpl="" fill="currentColor" height="16" icon-name="upvote-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$171725987$--><!--?lit$171725987$--><path d="M10 19c-.072 0-.145 0-.218-.006A4.1 4.1 0 0 1 6 14.816V11H2.862a1.751 1.751 0 0 1-1.234-2.993L9.41.28a.836.836 0 0 1 1.18 0l7.782 7.727A1.751 1.751 0 0 1 17.139 11H14v3.882a4.134 4.134 0 0 1-.854 2.592A3.99 3.99 0 0 1 10 19Zm0-17.193L2.685 9.071a.251.251 0 0 0 .177.429H7.5v5.316A2.63 2.63 0 0 0 9.864 17.5a2.441 2.441 0 0 0 1.856-.682A2.478 2.478 0 0 0 12.5 15V9.5h4.639a.25.25 0 0 0 .176-.429L10 1.807Z"></path><!--?--> </svg>
+                        </div>
+                        14K
+                        <div class="more ball">
+                            <svg class="downvote react" rpl="" fill="currentColor" height="16" icon-name="downvote-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$004364516$--><!--?lit$004364516$--><path d="M10 1c.072 0 .145 0 .218.006A4.1 4.1 0 0 1 14 5.184V9h3.138a1.751 1.751 0 0 1 1.234 2.993L10.59 19.72a.836.836 0 0 1-1.18 0l-7.782-7.727A1.751 1.751 0 0 1 2.861 9H6V5.118a4.134 4.134 0 0 1 .854-2.592A3.99 3.99 0 0 1 10 1Zm0 17.193 7.315-7.264a.251.251 0 0 0-.177-.429H12.5V5.184A2.631 2.631 0 0 0 10.136 2.5a2.441 2.441 0 0 0-1.856.682A2.478 2.478 0 0 0 7.5 5v5.5H2.861a.251.251 0 0 0-.176.429L10 18.193Z"></path><!--?--> </svg>
+                        </div>
+                    </button>  
+                        
+                        <button class="Get-App" style="display: flex; justify-content: space-between;padding: 10px; margin-left: 5px;">
+                            <svg rpl="" aria-hidden="true" class="icon-comment" fill="currentColor" height="16" icon-name="comment-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$004364516$--><!--?lit$004364516$--><path d="M10 19H1.871a.886.886 0 0 1-.798-.52.886.886 0 0 1 .158-.941L3.1 15.771A9 9 0 1 1 10 19Zm-6.549-1.5H10a7.5 7.5 0 1 0-5.323-2.219l.54.545L3.451 17.5Z"></path><!--?--> </svg></span>
+                            <span style="margin: 5px;">135</span>
+                        </button>
+                    <button class="Get-App" style="display: flex; justify-content: space-around;padding: 15px; margin-left: 5px;">
+                        <svg rpl="" aria-hidden="true" fill="currentColor" height="16" icon-name="award-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$004364516$--><!--?lit$004364516$--><path d="m18.66 15.36-2.593-3.885A6.997 6.997 0 1 0 3 8c0 1.22.322 2.42.932 3.476l-2.582 3.87a.961.961 0 0 0-.05 1.017c.168.315.525.51.88.483l2.177-.087.741 1.993c.108.333.41.59.756.64a.994.994 0 0 0 .947-.422l2.67-3.997c.35.026.708.026 1.059 0l2.678 4.01a.98.98 0 0 0 .794.418c.388 0 .761-.255.889-.621l.75-2.022 2.155.086a.976.976 0 0 0 .903-.481.955.955 0 0 0-.039-1.003ZM6.143 17.256c-.208-.557-.343-1.488-.871-1.85-.543-.37-1.485-.126-2.092-.101l1.7-2.547a7.009 7.009 0 0 0 2.992 1.909l-1.73 2.589ZM4.5 8a5.5 5.5 0 1 1 5.5 5.5A5.507 5.507 0 0 1 4.5 8Zm10.241 7.393c-.54.354-.675 1.302-.883 1.863l-1.73-2.59a7.007 7.007 0 0 0 2.992-1.908l1.7 2.547c-.601-.024-1.537-.268-2.079.088Z"></path><!--?--> </svg>
+                    </button>
+
+                    <button class="Get-App" style="display: flex; justify-content: space-around;padding: 10px; margin-left: 5px; font-size: 12px;">
+                        <svg  style="margin-right: 10px"rpl="" aria-hidden="true" class="icon-share" fill="currentColor" height="16" icon-name="share-new-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$004364516$--><!--?lit$004364516$--><path d="M2.239 18.723A1.235 1.235 0 0 1 1 17.488C1 11.5 4.821 6.91 10 6.505V3.616a1.646 1.646 0 0 1 2.812-1.16l6.9 6.952a.841.841 0 0 1 0 1.186l-6.9 6.852A1.645 1.645 0 0 1 10 16.284v-2.76c-2.573.243-3.961 1.738-5.547 3.445-.437.47-.881.949-1.356 1.407-.23.223-.538.348-.858.347ZM10.75 7.976c-4.509 0-7.954 3.762-8.228 8.855.285-.292.559-.59.832-.883C5.16 14 7.028 11.99 10.75 11.99h.75v4.294a.132.132 0 0 0 .09.134.136.136 0 0 0 .158-.032L18.186 10l-6.438-6.486a.135.135 0 0 0-.158-.032.134.134 0 0 0-.09.134v4.36h-.75Z"></path><!--?--> </svg>
+                        Share
+                    </button>
+                </div>
+        
+                
+                </div>
+
+
+
+                <hr style="border: 1px solid #26282A; width: 100%;"class="posts-line">
+                <div class="posts">
+                    <div class="posts-top">
+                        <div class="author">
+                            <span style="font-size: 13.5px; font-size: 12px;display: flex;gap: 5px;color: hsl(200, 13%, 70%);">
+                                <img style="margin-bottom: 10px;" src="https://styles.redditmedia.com/t5_2uqcm/styles/communityIcon_kfqpkjbvpv001.png?width=48&amp;height=48&amp;frame=1&amp;auto=webp&amp;crop=48:48,smart&amp;s=871296ce8664f6ad7c584164a1c901a823641c56" alt="r/MadeMeSmile icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="24" style="color: #0079D3;background: #0079D3;width: 24px;" loading="lazy">
+                                <b>r/MadeMeSmile</b> • 5 h.ago
+                            </span>
+                            <span style="display: flex; flex-direction: row;">
+                                <button  type="button" class="Get-App" style="background-color: #115BCA; padding: 12px; height: 12px; margin-right: 10px;"><span style="font-size: 13px;">Join</span></button>
+                                <div class="more" style="margin-top: -3px;"><svg rpl="" fill="currentColor" height="16" icon-name="overflow-horizontal-fill" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$171725987$--><!--?lit$171725987$--><path d="M6 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"></path><!--?--> </svg></div>
+                            </span>
+                        </div>
+                          <div class="title">
+                            <h3 style="transform: translateY(-35px); margin-left: 15px;">Incredible Dad Making a difference</h3>
+                        </div>
+                       
+                    </div>
+                    <div class="imgs" id="imgs">
+                        <div class="image-overlay"></div>
+                        <img class="blurred-image media-lightbox-img h-full w-full max-h-[100vw] object-contain mb-0 relative" src="https://preview.redd.it/incredible-dad-making-a-difference-v0-2a0yesqmg9af1.jpg?width=640&amp;crop=smart&amp;auto=webp&amp;s=5d879d0449c1b8c6a638ea4d5ecc4f9ce9d0b4c4" srcset="https://preview.redd.it/incredible-dad-making-a-difference-v0-2a0yesqmg9af1.jpg?width=320&amp;crop=smart&amp;auto=webp&amp;s=d78888bd8b6b3eac085b1bebc2113b4e990b6506 320w, https://preview.redd.it/incredible-dad-making-a-difference-v0-2a0yesqmg9af1.jpg?width=640&amp;crop=smart&amp;auto=webp&amp;s=5d879d0449c1b8c6a638ea4d5ecc4f9ce9d0b4c4 640w, https://preview.redd.it/incredible-dad-making-a-difference-v0-2a0yesqmg9af1.jpg?width=1080&amp;crop=smart&amp;auto=webp&amp;s=b6cbbff2745987fa0779cc1d5cd1690fc3cec083 1080w" sizes="(min-width: 1415px) 750px, (min-width: 768px) 50vw, 100vw" loading="eager" alt="r/MadeMeSmile - Incredible Dad Making a Difference" fetchpriority="auto">
+                        <img class="main-image media-lightbox-img h-full w-full max-h-[100vw] object-contain mb-0 relative" src="https://preview.redd.it/incredible-dad-making-a-difference-v0-2a0yesqmg9af1.jpg?width=640&amp;crop=smart&amp;auto=webp&amp;s=5d879d0449c1b8c6a638ea4d5ecc4f9ce9d0b4c4" srcset="https://preview.redd.it/incredible-dad-making-a-difference-v0-2a0yesqmg9af1.jpg?width=320&amp;crop=smart&amp;auto=webp&amp;s=d78888bd8b6b3eac085b1bebc2113b4e990b6506 320w, https://preview.redd.it/incredible-dad-making-a-difference-v0-2a0yesqmg9af1.jpg?width=640&amp;crop=smart&amp;auto=webp&amp;s=5d879d0449c1b8c6a638ea4d5ecc4f9ce9d0b4c4 640w, https://preview.redd.it/incredible-dad-making-a-difference-v0-2a0yesqmg9af1.jpg?width=1080&amp;crop=smart&amp;auto=webp&amp;s=b6cbbff2745987fa0779cc1d5cd1690fc3cec083 1080w" sizes="(min-width: 1415px) 750px, (min-width: 768px) 50vw, 100vw" loading="eager" alt="r/MadeMeSmile - Incredible Dad Making a Difference" fetchpriority="auto">
+                    </div>
+                <div style="display: flex; margin-left: 20px;transform: translateY(-70px);">
+                    <button class="Get-App" style="display: flex; justify-content: space-around;width: 100px;">
+                        <div class="more ball">
+                            <svg class="upvote react" rpl="" fill="currentColor" height="16" icon-name="upvote-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$171725987$--><!--?lit$171725987$--><path d="M10 19c-.072 0-.145 0-.218-.006A4.1 4.1 0 0 1 6 14.816V11H2.862a1.751 1.751 0 0 1-1.234-2.993L9.41.28a.836.836 0 0 1 1.18 0l7.782 7.727A1.751 1.751 0 0 1 17.139 11H14v3.882a4.134 4.134 0 0 1-.854 2.592A3.99 3.99 0 0 1 10 19Zm0-17.193L2.685 9.071a.251.251 0 0 0 .177.429H7.5v5.316A2.63 2.63 0 0 0 9.864 17.5a2.441 2.441 0 0 0 1.856-.682A2.478 2.478 0 0 0 12.5 15V9.5h4.639a.25.25 0 0 0 .176-.429L10 1.807Z"></path><!--?--> </svg>
+                        </div>
+                        14K
+                        <div class="more ball">
+                            <svg class="downvote react" rpl="" fill="currentColor" height="16" icon-name="downvote-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$004364516$--><!--?lit$004364516$--><path d="M10 1c.072 0 .145 0 .218.006A4.1 4.1 0 0 1 14 5.184V9h3.138a1.751 1.751 0 0 1 1.234 2.993L10.59 19.72a.836.836 0 0 1-1.18 0l-7.782-7.727A1.751 1.751 0 0 1 2.861 9H6V5.118a4.134 4.134 0 0 1 .854-2.592A3.99 3.99 0 0 1 10 1Zm0 17.193 7.315-7.264a.251.251 0 0 0-.177-.429H12.5V5.184A2.631 2.631 0 0 0 10.136 2.5a2.441 2.441 0 0 0-1.856.682A2.478 2.478 0 0 0 7.5 5v5.5H2.861a.251.251 0 0 0-.176.429L10 18.193Z"></path><!--?--> </svg>
+                        </div>
+                    </button>  
+                        
+                        <button class="Get-App" style="display: flex; justify-content: space-between;padding: 10px; margin-left: 5px;">
+                            <svg rpl="" aria-hidden="true" class="icon-comment" fill="currentColor" height="16" icon-name="comment-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$004364516$--><!--?lit$004364516$--><path d="M10 19H1.871a.886.886 0 0 1-.798-.52.886.886 0 0 1 .158-.941L3.1 15.771A9 9 0 1 1 10 19Zm-6.549-1.5H10a7.5 7.5 0 1 0-5.323-2.219l.54.545L3.451 17.5Z"></path><!--?--> </svg></span>
+                            <span style="margin: 5px;">135</span>
+                        </button>
+                    <button class="Get-App" style="display: flex; justify-content: space-around;padding: 15px; margin-left: 5px;">
+                        <svg rpl="" aria-hidden="true" fill="currentColor" height="16" icon-name="award-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$004364516$--><!--?lit$004364516$--><path d="m18.66 15.36-2.593-3.885A6.997 6.997 0 1 0 3 8c0 1.22.322 2.42.932 3.476l-2.582 3.87a.961.961 0 0 0-.05 1.017c.168.315.525.51.88.483l2.177-.087.741 1.993c.108.333.41.59.756.64a.994.994 0 0 0 .947-.422l2.67-3.997c.35.026.708.026 1.059 0l2.678 4.01a.98.98 0 0 0 .794.418c.388 0 .761-.255.889-.621l.75-2.022 2.155.086a.976.976 0 0 0 .903-.481.955.955 0 0 0-.039-1.003ZM6.143 17.256c-.208-.557-.343-1.488-.871-1.85-.543-.37-1.485-.126-2.092-.101l1.7-2.547a7.009 7.009 0 0 0 2.992 1.909l-1.73 2.589ZM4.5 8a5.5 5.5 0 1 1 5.5 5.5A5.507 5.507 0 0 1 4.5 8Zm10.241 7.393c-.54.354-.675 1.302-.883 1.863l-1.73-2.59a7.007 7.007 0 0 0 2.992-1.908l1.7 2.547c-.601-.024-1.537-.268-2.079.088Z"></path><!--?--> </svg>
+                    </button>
+
+                    <button class="Get-App" style="display: flex; justify-content: space-around;padding: 10px; margin-left: 5px; font-size: 12px;">
+                        <svg  style="margin-right: 10px"rpl="" aria-hidden="true" class="icon-share" fill="currentColor" height="16" icon-name="share-new-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg"> <!--?lit$004364516$--><!--?lit$004364516$--><path d="M2.239 18.723A1.235 1.235 0 0 1 1 17.488C1 11.5 4.821 6.91 10 6.505V3.616a1.646 1.646 0 0 1 2.812-1.16l6.9 6.952a.841.841 0 0 1 0 1.186l-6.9 6.852A1.645 1.645 0 0 1 10 16.284v-2.76c-2.573.243-3.961 1.738-5.547 3.445-.437.47-.881.949-1.356 1.407-.23.223-.538.348-.858.347ZM10.75 7.976c-4.509 0-7.954 3.762-8.228 8.855.285-.292.559-.59.832-.883C5.16 14 7.028 11.99 10.75 11.99h.75v4.294a.132.132 0 0 0 .09.134.136.136 0 0 0 .158-.032L18.186 10l-6.438-6.486a.135.135 0 0 0-.158-.032.134.134 0 0 0-.09.134v4.36h-.75Z"></path><!--?--> </svg>
+                        Share
+                    </button>
+                </div>
+                </div>
+            </div>
+        <div class="popular-communites">
+            <h4 style="color: #91adbb;font-size: 14px; transform: translateY(-20px);">Popular Communities</h4>
+           
+                <div class="popular-instance"><img src="https://styles.redditmedia.com/t5_2w844/styles/communityIcon_krq4riav5m191.png?width=96&amp;height=96&amp;frame=1&amp;auto=webp&amp;crop=96:96,smart&amp;s=59cdfea0f4b3a48d11d45911addf3f353baa8c30" alt="r/NoStupidQuestions icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="32" style="width: 32px;" loading="lazy">
+                    <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                        r/NoStupidQuestions
+                        <span style="font-size: 12px;">6,422,215 members</span>
+                    </div>
+                </div>
+                <div class="popular-instance">
+                <svg rpl="" class="flex items-center shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" fill="currentColor" height="32" icon-name="community-fill" viewBox="0 0 20 20" width="32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0ZM8.016 8.633a1.616 1.616 0 0 0-.2.806V13.5H5.931V6.172h1.8v.9h.039a3.009 3.009 0 0 1 1.018-.732 3.45 3.45 0 0 1 1.449-.284c.246-.003.491.02.732.068.158.024.309.08.444.164l-.759 1.832a2.09 2.09 0 0 0-1.093-.26c-.33-.01-.658.062-.954.208a1.422 1.422 0 0 0-.591.565Zm2.9 6.918H9.355L14.7 2.633c.426.272.828.58 1.2.922l-4.984 11.996Z"></path>
+                    </svg>
+                    <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                        r/Fitness
+                        <span style="font-size: 12px;">12,410,766 members</span>
+                    </div>
+                </div>
+                <div class="popular-instance">
+                    <img src="https://styles.redditmedia.com/t5_2qh1e/styles/communityIcon_ostbin5fscdb1.png?width=96&amp;height=96&amp;frame=1&amp;auto=webp&amp;crop=96:96,smart&amp;s=495539d0e32734c3a7617872cc28335ef54ddf0d" alt="r/videos icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="32" style="width: 32px;" loading="lazy">
+                      <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                        r/videos
+                        <span style="font-size: 12px;">26,764,471 members</span>
+                        </div>
+                </div>
+                <div class="popular-instance">
+                    <img src="https://styles.redditmedia.com/t5_2rw0n/styles/communityIcon_1a8fhjs0ql9c1.png?width=96&amp;height=96&amp;frame=1&amp;auto=webp&amp;crop=96:96,smart&amp;s=ec9ebd942be0f81eaec8793b6706c68a9e1ed38d" alt="r/Amd icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="32" style="width: 32px;" loading="lazy">
+                    <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                        r/Amd
+                        <span style="font-size: 12px;">2,203,766 members</span>
+                    </div>
+                </div>
+                <div class="popular-instance">
+                    <img src="https://styles.redditmedia.com/t5_2qio8/styles/communityIcon_kk65kxekp2hd1.png?width=96&amp;height=96&amp;frame=1&amp;auto=webp&amp;crop=96:96,smart&amp;s=432db30f397b9bccde70dc880b0ba65f21b1ea18" alt="r/wow icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="32" style="width: 32px;" loading="lazy">
+                   <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                        r/wow
+                        <span style="font-size: 12px;">3,028,178 members</span>
+                    </div>
+                </div>
+                <details class="d">
+                    <summary class="s"><span class="header see-more" style="font-size: 11px; width: 60px; border-radius: 50px;height: 20px;padding: 12px;"><b>See more</b></span></summary>
+
+                        <div class="popular-instance">
+                            <img src="https://styles.redditmedia.com/t5_2r65t/styles/communityIcon_l590lwtu9to31.jpg?width=96&amp;height=96&amp;frame=1&amp;auto=webp&amp;crop=96:96,smart&amp;s=c70edae31708b4b07c7a53a5b6076d2c2f7fa0e1" alt="r/malefashionadvice icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="32" style="width: 32px;" loading="lazy">
+                        <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                                r/malefashionadvice
+                                <span style="font-size: 12px;">6,317,413 members</span>
+                        </div>
+                        </div>
+                        <div class="popular-instance">
+                            <img src="https://styles.redditmedia.com/t5_2rn7o/styles/communityIcon_2083me9o3ia21.png?width=96&amp;height=96&amp;frame=1&amp;auto=webp&amp;crop=96:96,smart&amp;s=d8117f967009248c556cc316e49525fbf94ceb85" alt="r/reddeadredemption icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="32" style="width: 32px;" loading="lazy">
+                        <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                                r/reddeadredemption
+                                <span style="font-size: 12px;">2,355,975 members</span>
+                        </div>
+                        </div>
+                        <div class="popular-instance">
+                            <svg rpl="" class="flex items-center shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" fill="currentColor" height="32" icon-name="community-fill" viewBox="0 0 20 20" width="32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0ZM8.016 8.633a1.616 1.616 0 0 0-.2.806V13.5H5.931V6.172h1.8v.9h.039a3.009 3.009 0 0 1 1.018-.732 3.45 3.45 0 0 1 1.449-.284c.246-.003.491.02.732.068.158.024.309.08.444.164l-.759 1.832a2.09 2.09 0 0 0-1.093-.26c-.33-.01-.658.062-.954.208a1.422 1.422 0 0 0-.591.565Zm2.9 6.918H9.355L14.7 2.633c.426.272.828.58 1.2.922l-4.984 11.996Z"></path>
+                            </svg>
+                        <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                                r/2007scape
+                                <span style="font-size: 12px;">1,211,669 members</span>
+                        </div>
+                        </div>
+                        <div class="popular-instance">
+                            <img src="https://styles.redditmedia.com/t5_3lry9/styles/communityIcon_mca40dqy97x31.png?width=96&amp;height=96&amp;frame=1&amp;auto=webp&amp;crop=96:96,smart&amp;s=825ddf904b6ee77c53753b6ea91cfdf6d5c33437" alt="r/MonsterHunterWorld icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="32" style="width: 32px;" loading="lazy">
+                        <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                                r/MonsterHunterWorld
+                                <span style="font-size: 12px;">582,765 members</span>
+                        </div>
+                        </div>
+                        <div class="popular-instance">
+                            <img src="https://styles.redditmedia.com/t5_2sdpm/styles/communityIcon_u6zl61vcy9511.png?width=96&amp;height=96&amp;frame=1&amp;auto=webp&amp;crop=96:96,smart&amp;s=6447f72f9787485f347907cdd67ea49a99bfbe26" alt="r/cscareerquestions icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="32" style="width: 32px;" loading="lazy">
+                            <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                                    r/cscareerquestions
+                                    <span style="font-size: 12px;">2,261,614 members</span>
+                            </div>
+                        </div>
+                        <div class="popular-instance">
+                            <img src="https://styles.redditmedia.com/t5_2qh8c/styles/communityIcon_gk61dqqvha9b1.png?width=96&amp;height=96&amp;frame=1&amp;auto=webp&amp;crop=96:96,smart&amp;s=c3700581269fe93c09bb26c3ebc5a61de770f903" alt="r/singapore icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="32" style="width: 32px;" loading="lazy">
+                            <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                                    r/Singapore
+                                    <span style="font-size: 12px;">1,753,309 members</span>
+                            </div>
+                        </div>
+                        <div class="popular-instance">
+                            <svg rpl="" class="flex items-center shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" fill="currentColor" height="32" icon-name="community-fill" viewBox="0 0 20 20" width="32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0ZM8.016 8.633a1.616 1.616 0 0 0-.2.806V13.5H5.931V6.172h1.8v.9h.039a3.009 3.009 0 0 1 1.018-.732 3.45 3.45 0 0 1 1.449-.284c.246-.003.491.02.732.068.158.024.309.08.444.164l-.759 1.832a2.09 2.09 0 0 0-1.093-.26c-.33-.01-.658.062-.954.208a1.422 1.422 0 0 0-.591.565Zm2.9 6.918H9.355L14.7 2.633c.426.272.828.58 1.2.922l-4.984 11.996Z"></path>
+                            </svg>
+                            <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                                    r/pokemongo
+                                    <span style="font-size: 12px;">5,494,494 members</span>
+                            </div>
+                        </div>
+                        <div class="popular-instance">
+                            <img src="https://styles.redditmedia.com/t5_2s9h3/styles/communityIcon_ujdrcdijabb61.png?width=96&amp;height=96&amp;frame=1&amp;auto=webp&amp;crop=96:96,smart&amp;s=825ec2c81eda2b2b91ca1784658dbeca910e4ba2" alt="r/DunderMifflin icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="32" style="width: 32px;" loading="lazy">
+                            <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                                    r/DunderMifflin
+                                    <span style="font-size: 12px;">3,602,032 members</span>
+                            </div>
+                        </div>
+                        <div class="popular-instance">
+                            <img src="https://styles.redditmedia.com/t5_2r8ot/styles/communityIcon_jwr5s7l5ici61.png?width=96&amp;height=96&amp;frame=1&amp;auto=webp&amp;crop=96:96,smart&amp;s=3463bc755d69e2302569a4a4253f343372babaf5" alt="r/learnpython icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="32" style="width: 32px;" loading="lazy">
+                            <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                                    r/learnpython
+                                    <span style="font-size: 12px;">937,510 members</span>
+                            </div>
+                        </div>
+                        <div class="popular-instance">
+                           <svg rpl="" class="flex items-center shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" fill="currentColor" height="32" icon-name="community-fill" viewBox="0 0 20 20" width="32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0ZM8.016 8.633a1.616 1.616 0 0 0-.2.806V13.5H5.931V6.172h1.8v.9h.039a3.009 3.009 0 0 1 1.018-.732 3.45 3.45 0 0 1 1.449-.284c.246-.003.491.02.732.068.158.024.309.08.444.164l-.759 1.832a2.09 2.09 0 0 0-1.093-.26c-.33-.01-.658.062-.954.208a1.422 1.422 0 0 0-.591.565Zm2.9 6.918H9.355L14.7 2.633c.426.272.828.58 1.2.922l-4.984 11.996Z"></path>
+                            </svg>
+                            <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                                    r/Android
+                                    <span style="font-size: 12px;">3,085,992 members</span>
+                            </div>
+                        </div>
+                        <div class="popular-instance">
+                           <svg rpl="" class="flex items-center shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" fill="currentColor" height="32" icon-name="community-fill" viewBox="0 0 20 20" width="32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0ZM8.016 8.633a1.616 1.616 0 0 0-.2.806V13.5H5.931V6.172h1.8v.9h.039a3.009 3.009 0 0 1 1.018-.732 3.45 3.45 0 0 1 1.449-.284c.246-.003.491.02.732.068.158.024.309.08.444.164l-.759 1.832a2.09 2.09 0 0 0-1.093-.26c-.33-.01-.658.062-.954.208a1.422 1.422 0 0 0-.591.565Zm2.9 6.918H9.355L14.7 2.633c.426.272.828.58 1.2.922l-4.984 11.996Z"></path>
+                            </svg>
+                            <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                                    r/Steam
+                                    <span style="font-size: 12px;">4,930,928 members</span>
+                            </div>
+                        </div>
+                        <div class="popular-instance">
+                           <img src="https://styles.redditmedia.com/t5_2qoqu/styles/communityIcon_va79otwwv56d1.png?width=96&amp;height=96&amp;frame=1&amp;auto=webp&amp;crop=96:96,smart&amp;s=7aeeb5186a71ddf32a06681efe1e201b8acc6e53" alt="r/southpark icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="32" style="width: 32px;" loading="lazy">
+                            <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                                    r/southpark
+                                    <span style="font-size: 12px;">r/southpark</span>
+                            </div>
+                        </div>
+                        <div class="popular-instance">
+                           <img src="https://styles.redditmedia.com/t5_2s837/styles/communityIcon_k7f7u5c4hi021.png?width=96&amp;height=96&amp;frame=1&amp;auto=webp&amp;crop=96:96,smart&amp;s=6ce3546ae0395551a6c2638366cf3308076dfc2d" alt="r/skyrim icon" class="mb-0 shreddit-subreddit-icon__icon rounded-full overflow-hidden nd:visible nd:bg-secondary-background  w-full h-full" width="32" style="width: 32px;" loading="lazy">
+                            <div style="display: flex; flex-direction: column;color: #a6b5bb;">
+                                    r/skyrim
+                                    <span style="font-size: 12px;">2,482,952 members</span>
+                            </div>
+                        </div>
+                        <span class="header see-less" style="font-size: 11px; width: 60px; border-radius: 50px;height: 20px;padding: 12px;" id="less"><b>See less</b></span>
+                </details>  
+        </div>
+        </div>
+    </div>
+        <!--popular-->>
+    <div class="barcode-warpper">
+        <div class="barcode">
+            <button class="close" type="button" id="X" style="pointer-events: all;">
+                <svg style="color: white" fill="currentColor" height="16" icon-name="close-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                <path d="m11.06 10 6.22-6.22a.771.771 0 0 0-.015-1.046.771.771 0 0 0-1.045-.014L10 8.94 3.78 2.72a.771.771 0 0 0-1.042.018.771.771 0 0 0-.018 1.042L8.94 10l-6.22 6.22a.758.758 0 0 0-.02 1.08.758.758 0 0 0 1.08-.02L10 11.06l6.22 6.22a.771.771 0 0 0 1.041-.018.771.771 0 0 0 .019-1.042L11.06 10Z"></path>
+                </svg>
+            </button>
+            <div style="display: flex; flex-direction: column;justify-content: center;align-items: center;width: 100%;">
+                <h2 style="color: white;margin-right: 10%;">Get the Reddit app</h2>
+                <span style="font-size: 14px;margin-left: 8%;transform: translateY(-50%);">Scan this QR code to download the app now</span>
+            </div>
+                
+
+            <img style="transform: scale(1.1);" height="200" src="https://www.redditstatic.com/shreddit/assets/download-app-persistent-qr-codex2.png" alt="QR code to download the Reddit app" class="m-0">
+            <span style="font-size: 14px;">Or check it out in the app stores</span>
+            <div style="display: flex; gap: 25px;">
+                <img style="transform: scale(1.1);" height="40" aria-label="Google play" src="https://www.redditstatic.com/shreddit/assets/google-play.svg" alt="Get it on Google Play" class="m-0">
+                <img style="transform: scale(1.1);" height="40" aria-label="App store" src="https://www.redditstatic.com/shreddit/assets/app-store.svg" alt="Download on the App Store" class="m-0">
+            </div>
+        </div>
+    </div>
+    
+    <div class="menu" id="menu">
+            <div style="display: flex; flex-direction: row;" class="menu-items-container">
+                <svg rpl="" fill="currentColor" height="20" icon-name="logout-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.991 10.625H1v-1.25h10.991l-1.933-1.933.884-.884 3 3a.624.624 0 0 1 0 .884l-3 3-.884-.884 1.933-1.933ZM15.375 1h-9.75A2.629 2.629 0 0 0 3 3.625v.792h1.25v-.792A1.377 1.377 0 0 1 5.625 2.25h9.75a1.377 1.377 0 0 1 1.375 1.375v12.75a1.377 1.377 0 0 1-1.375 1.375h-9.75a1.377 1.377 0 0 1-1.375-1.375v-.792H3v.792A2.63 2.63 0 0 0 5.625 19h9.75A2.63 2.63 0 0 0 18 16.375V3.625A2.63 2.63 0 0 0 15.375 1Z"></path>
+                    </svg>
+                    <a href="#" class="menu-items">Log In/Sign Up</a></div>
+            <div style="display: flex;flex-direction: row;" class="menu-items-container"><svg rpl="" fill="currentColor" height="20" icon-name="conversion-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path d="m6.758 11.034.585 1.43a4.53 4.53 0 1 1 5.13-5.052l-1.419-.594a3.276 3.276 0 1 0-4.3 4.216h.004Zm-3.53 1.738a6.75 6.75 0 1 1 9.545-9.544A6.7 6.7 0 0 1 14.75 8c0 .121-.01.24-.018.36l1.218.51a8 8 0 1 0-7.177 7.093l-.5-1.225a6.722 6.722 0 0 1-5.046-1.966Zm9.623 7.141 1.2-2.874 2.021 2.011a.7.7 0 0 0 .99 0l1.885-1.87a.7.7 0 0 0 .007-.989l-1.994-2.038 2.5-1.024a.7.7 0 0 0 .431-.647L19.852 12 8.712 7.262a1.1 1.1 0 0 0-1.443 1.424l4.448 10.84a.7.7 0 0 0 .646.433l.488-.046Zm4.913-7.436L14.772 13.7l2.912 2.977-1.112 1.1-2.95-2.938-1.25 2.981-3.759-9.178 9.151 3.835Z"></path>
+                </svg ><a href="#" class="menu-items">Advertise on Reddit</a></div>
+            <div style="display: flex;flex-direction: row;" class="menu-items-container"><svg rpl="" fill="currentColor" height="20" icon-name="statistics-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 16H1.75v-6H3v6Zm5-9H6.75v9H8V7Zm5-3h-1.25v12H13V4Zm5-3h-1.25v15H18V1ZM1.01 17.75V19h17.9v-1.25H1.01Z"></path>
+                </svg><a href="#" class="menu-items">Try Reddit Pro <span class="beta">BETA</span></a></div>
+            
+            <div style="display: flex;flex-direction: row;" class="menu-items-container">
+                <svg rpl="" fill="currentColor" height="20" icon-name="topic-marketplace-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 7.627v9.777A2.617 2.617 0 0 1 16.307 20H3.745a2.675 2.675 0 0 1-2.719-2.62L1 7.627a.627.627 0 0 1 .625-.626h2.187v1.25H2.251l.025 9.124a1.423 1.423 0 0 0 1.469 1.373h12.562a1.385 1.385 0 0 0 1.443-1.345V8.251h-1.563v-1.25h2.188a.625.625 0 0 1 .625.626ZM8.013 7.002v1.25h3.974v-1.25H8.013ZM15 4.627a4.828 4.828 0 0 0-5-4.624 4.83 4.83 0 0 0-5 4.624v5.3h1.25v-5.3A3.58 3.58 0 0 1 10 1.253a3.581 3.581 0 0 1 3.75 3.374v5.3H15v-5.3Z"></path>
+                </svg>
+                <a href="#" class="menu-items">Shop Collectible Avatars</a></div>
+        </div>
+
+
+
+    
+   
+
+
+</form>
+<form action="">
+    
+    <div id="login-page-wrapper">
+        <div class="h1"><h1 id="h1">Log In</h1></div>
+        <button class="close" type="button" id="close-login">
+            <svg style="color: white" fill="currentColor" height="16" icon-name="close-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+            <path d="m11.06 10 6.22-6.22a.771.771 0 0 0-.015-1.046.771.771 0 0 0-1.045-.014L10 8.94 3.78 2.72a.771.771 0 0 0-1.042.018.771.771 0 0 0-.018 1.042L8.94 10l-6.22 6.22a.758.758 0 0 0-.02 1.08.758.758 0 0 0 1.08-.02L10 11.06l6.22 6.22a.771.771 0 0 0 1.041-.018.771.771 0 0 0 .019-1.042L11.06 10Z"></path>
+            </svg>
+        </button>
+        
+        <div class="description">By continuing, you agree to our <a href="#" style="color: rgb(89, 147, 253);text-decoration: none;" id="baz">User Agreement</a> and </div>
+        <div class="description" id="some-text">acknowledge that you  understand the <a href="#" class="forgot-password underline-text"> Privacy Policy.</a></div>
+
+        <div class="btn-container">
+            <div style="display: flex; flex-direction: row;"><button type="submit" class="btn-continue"><img style="transform: translateX(-75px);" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAzElEQVR4AeyVwQnCQBBFgzd78KBnD7agINiGduFJ7UTvtiBiC1agnej7hwmGnXXnIkLYMI8Zks9nMiSzg+aH11/M17zQA15B9uiS8DofozqC8pMc4YBuDp3wzE1wo5h8sKI2ptT27EStUDPKLd/MWxHFEq5whjtsoRhR8wtOI5jBEHZQjKh50cgTVHNvKk0dSx2LOwH3Zr++FtvfWqHa6yWSPW4zyo1Fu1zmOpFKyFwN2V437+wfukGxAOUIOjiQdyPXuVTqXt1EkD7hDQAA///ntqvQAAAABklEQVQDAHkRNy+GZ9BSAAAAAElFTkSuQmCC" alt="" class="icons"> Continue With Phone Number</button></div>
+            <div style="display: flex; flex-direction: row;"><button type="submit" class="btn-continue"><img src="./search.png" alt="" style="transform: translateX(-100px);">Continue with Google</button></div>
+            <div style="display: flex; flex-direction: row;"><button type="submit" class="btn-continue"></button><button type="submit" class="btn-continue"><img src="./apple-logo.png" alt=""  style="transform: translateX(-105px);">Continue with Apple</button></div>
+        </div>
+       
+            <div style="display: flex; flex-direction:row;align-items: center; justify-content: space-between;transform:translateY(50px);"><hr style="border: none; width: 150px; height: 2px; background-color: #23292e;transform: translateX(50px);"><span style="font-size: 13px; color: #828f95;">OR</span><hr style="border: none; width: 150px; height: 2px; background-color: #23292e;transform: translateX(-50px);"></div>
+            <div class="input-fields-container">
+
+                <div style="display: flex;">
+                    <input type="text" id="username" class="form-input" placeholder="Email or username *" required>
+                </div>
+
+                <div style="display: flex;">
+                    <input type="text" id="password" class="form-input" placeholder="Password *" required>
+
+                </div>
+            </div>
+        <p>
+        <div style="display: flex;flex-direction: column; align-items: self-start; justify-content: center;gap:15px;margin-left: 15%;">
+            <a href="#" class="forgot-password">Forgot Password?</a>
+            <div><span style="color: rgba(255, 255, 255, 0.747); font-size: 14px;">New to Reddit? </span><a href="#" class="forgot-password">Sign Up</a></div>
+        </div>
+        </p>
+        <p>
+            <div><button type="submit" id="btn-login" class="btn-continue">Log In</button></div>
+            
+        </p>
+      
+        
+    </div>
+    
+</form>
+    <script src="script.js"></script>
+    </main>
+
+</body>
+</html>

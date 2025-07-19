@@ -1,0 +1,230 @@
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const input1 = document.getElementById("username");
+    const input2 = document.getElementById("password");
+    const button = document.getElementById("btn-login");
+    const overlay = document.querySelector("#overlay");
+    const main_overlay = document.querySelector("#main-overlay")
+    const carousel = document.querySelector(".scroll-content");
+    const nav = document.getElementById("side-bar");
+    
+    const popular_communities = document.querySelector(".popular-communites");
+
+
+    
+    function showoverlay(){
+        overlay.style.visibility = "visible";
+    }
+    function hideoverlay(){
+        overlay.style.visibility = "hidden";
+    }
+    function orange_button(){
+        button.style.backgroundColor = "rgba(255, 60, 0, 0.877)";
+    }
+    function orange_button_hover(){
+        button.style.backgroundColor = "rgba(255, 60, 0, 0.644)";
+    }
+
+    function grey_button (){
+        button.style.backgroundColor = "rgba(255, 255, 255, 0.041)";
+    }
+
+    const side_btn = document.getElementById("side-btn");
+    side_btn.addEventListener("click", function(){
+        nav.style.opacity = getComputedStyle(nav).opacity === "1" ? 0 : 1;
+        
+        main_overlay.style.visibility = getComputedStyle(nav).opacity ==="0" ? "visible" : "hidden";
+        main_overlay.addEventListener("click", function(){
+            nav.style.opacity = 0;
+            main_overlay.style.opacity = 0;
+
+        })
+       
+        nav.style.backgroundColor = "#0E1113";
+    })
+
+    input1.addEventListener("change", function(){
+    input2.addEventListener("change", function(){
+        if (input1.value !== "" && input2.value !== ""){
+            
+            orange_button();
+            button.style.color = "white";
+            button.addEventListener("mouseover", function(){
+               orange_button_hover();
+                });
+
+                button.addEventListener("mouseout", function(){
+                    orange_button();
+                });
+            }
+        else {
+            grey_button();
+            button.addEventListener("mouseover", function(){
+                grey_button();
+            })
+            button.addEventListener("mouseout", function(){
+                grey_button();
+            })
+        }
+    });  
+    });
+
+    const login_page = document.querySelector("#login-page-wrapper");
+    const lgnButton = document.getElementsByClassName("lgn-btn")[0];
+    
+
+    lgnButton.addEventListener("click", function(event){
+        event.preventDefault();
+        login_page.style.visibility = "visible";
+        showoverlay()
+        overlay.addEventListener("click", function(){
+            login_page.style.visibility = "hidden";
+            hideoverlay();
+        });
+    });
+
+    const close = document.querySelector("#close-login");
+    close.addEventListener("click", function(){
+        login_page.style.visibility = "hidden";
+        hideoverlay();
+    });
+    const btn_container = document.querySelector("#collapse-container");
+    const body = document.querySelector("body");
+  
+
+    btn_container.addEventListener("click", function(event){
+        event.preventDefault();
+        if (window.getComputedStyle(body).gridTemplateColumns.includes("270px")) {
+            nav.style.overflow = "hidden";
+            nav.style.width = 0;
+            body.style.gridTemplateColumns = "0px 1fr";
+            nav.style.border = "1px solid rgba(211, 211, 211, 0.192)";
+            nav.style.borderLeft = "1px solid transparent";
+            nav.style.marginLeft = "20px"; 
+            btn_container.style.left = "6px";
+            
+        } else {
+            nav.style.overflow = "visible";
+            nav.style.width = "270px";
+            body.style.gridTemplateColumns = "270px 1fr";
+            btn_container.style.left = "275px";
+            nav.style.marginLeft = "20px";
+        }
+
+    });
+
+     window.addEventListener("scroll", function(){
+        btn_container.style.position = "fixed";
+    })
+
+    
+    
+    const see_more = document.querySelector(".see-more");
+    const see_less = document.querySelector(".see-less");
+    see_less.addEventListener("click", function(){
+        see_more.click();
+        
+    })
+    
+    const more = document.querySelector(".more-details");
+    const menu = document.querySelector("#menu");
+   
+    more.addEventListener("toggle", function(){
+    
+        if (more.open){
+            menu.style.opacity = 1;
+            menu.style.zIndex = 1000;
+    
+        }
+        else {
+            menu.style.opacity = 0;
+            menu.style.zIndex = 0;
+        }
+
+     document.addEventListener('click', (event) => {
+    if (more.open && !more.contains(event.target)) {
+        more.removeAttribute('open');
+    }
+
+})})
+    
+    
+    const right_btn = document.querySelector("#right-arrow");
+    const left_btn = document.querySelector("#left-arrow");
+    let first_click = 0
+    right_btn.addEventListener("click", function(){
+        first_click = first_click + 1;
+        carousel.style.scrollBehavior = "smooth"
+        carousel.scrollLeft += 500;
+        left_btn.style.display = "block";
+        if (first_click%2 === 0){
+            right_btn.style.display = "none";
+        }
+
+    })
+
+    left_btn.addEventListener("click", function(){
+        carousel.style.scrollBehavior = "smooth"
+        carousel.scrollLeft -= 1900;
+        left_btn.style.display = "none";
+        right_btn.style.display = "block";
+        
+    })
+    
+    const get_app_popup = document.querySelector(".barcode");
+    const getapp = document.querySelector("#getapp");
+    getapp.addEventListener("click", function(){
+        get_app_popup.style.visibility = "visible";
+        showoverlay();
+        
+
+        overlay.addEventListener("click", function(){
+            hideoverlay();
+            get_app_popup.style.visibility = "hidden";
+        })
+        
+       
+    })
+    const close_btn = document.getElementById("X");
+        close_btn.addEventListener("click", function(){
+        get_app_popup.style.visibility = "hidden";
+        hideoverlay();
+    })
+
+    const expand = document.querySelector(".s");
+    const contract = document.querySelector("#less");
+    
+    expand.addEventListener("click", function(){
+        popular_communities.style.height = "700px";
+        expand.style.display = "none";
+    })
+    contract.addEventListener("click", function (){
+        expand.click();
+        expand.style.display = "block";
+        popular_communities.style.height = "450px";
+    })
+    
+    let img_container = document.getElementsByClassName("imgs");
+    
+    for (i = 0;i < img_container.length ;i++){
+        
+        let blurred_img = document.getElementsByClassName("blurred-image")[i];
+        let image_overlay = document.getElementsByClassName("image-overlay")[i];
+        main_image = document.getElementsByClassName("main-image")[i];
+        let main_image_width = main_image.offsetWidth;
+        let img_container_width = img_container[i].offsetWidth;
+        
+       
+        if (img_container_width > main_image_width){
+            
+            image_overlay.style.opacity = 1;
+            blurred_img.style.opacity = 1;
+        }
+         else {
+            continue;
+        }
+    }
+        
+   
+
+});
