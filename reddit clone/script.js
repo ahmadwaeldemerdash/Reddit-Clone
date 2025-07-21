@@ -28,19 +28,25 @@ document.addEventListener("DOMContentLoaded", function () {
     function grey_button (){
         button.style.backgroundColor = "rgba(255, 255, 255, 0.041)";
     }
+    if (window.innerWidth <= 1024){
+        nav.classList.add("side-bar-hidden")
+    }
 
     const side_btn = document.getElementById("side-btn");
-    side_btn.addEventListener("click", function(){
-        nav.style.opacity = getComputedStyle(nav).opacity === "1" ? 0 : 1;
-        
-        main_overlay.style.visibility = getComputedStyle(nav).opacity ==="0" ? "visible" : "hidden";
-        main_overlay.addEventListener("click", function(){
-            nav.style.opacity = 0;
-            main_overlay.style.opacity = 0;
-
-        })
-       
+        side_btn.addEventListener("click", function(){
+        nav.classList.toggle("side-bar-hidden");
         nav.style.backgroundColor = "#0E1113";
+        main_overlay.classList.toggle("overlay-visible");
+        });
+
+    window.addEventListener("resize", ()=>{
+        if (window.innerWidth > 1024){
+            nav.classList.remove("side-bar-hidden");
+        }
+        else {
+            nav.classList.add("side-bar-hidden");
+            
+        }
     })
 
     input1.addEventListener("change", function(){
@@ -203,28 +209,82 @@ document.addEventListener("DOMContentLoaded", function () {
         expand.style.display = "block";
         popular_communities.style.height = "450px";
     })
+
+
+    const images = document.querySelectorAll("#image-slider img");
+    dot = document.querySelector(".dot");
+    let dot_container = document.querySelector(".dots")
+    let image_index = 0;
+    for (let i =1;i < images.length; i++){
+        let clone = dot.cloneNode(true);
+        dot_container.appendChild(clone);
+    }
+    function InitializeSlider(){
+       images[image_index].classList.remove("hide-image");
+       
+    }
+    function show_index(index, previousindex){
+        if (index >= images.length){
+            images[previndex].classList.add("hide-image");
+            image_index = 0;
+            images[image_index].classList.remove("hide-image");
+        }
+        if (index < 0){
+            images[previousindex].classList.add("hide-image");
+            image_index = images.length - 1;
+            
+            images[image_index].classList.remove("hide-image");
+        }
+        
+        if (index > previousindex){
+            previndex = index - 1;
+            images[previndex].classList.add("hide-image");
+            images[image_index].classList.remove("hide-image");
+
+        }
+        else {
+            images[previndex].classList.add("hide-image")
+            images[image_index].classList.remove("hide-image")
+        }
+    }
+
+    function nextslide(){
+        previousindex = image_index;
+        image_index ++;
+        show_index(image_index, previousindex)
+    }
+    function prevslide(){
+        previndex = image_index;
+        image_index --;
+        show_index(image_index, previndex)
+    }
+    InitializeSlider();
+    window.nextslide = nextslide;
+    window.prevslide = prevslide;
+
     
     let img_container = document.getElementsByClassName("imgs");
     
     for (i = 0;i < img_container.length ;i++){
-        
-        let blurred_img = document.getElementsByClassName("blurred-image")[i];
+
         let image_overlay = document.getElementsByClassName("image-overlay")[i];
-        main_image = document.getElementsByClassName("main-image")[i];
-        let main_image_width = main_image.offsetWidth;
-        let img_container_width = img_container[i].offsetWidth;
-        
+        let main_image = document.getElementsByClassName("main-image")[i];
        
-        if (img_container_width > main_image_width){
+
+        if (img_container[i].offsetWidth > main_image.offsetWidth){
+            let blurred_image = main_image.cloneNode(true)
+            img_container[i].appendChild(blurred_image);
+            console.log(blurred_image);
+            blurred_image.classList.remove("main-image");
+            blurred_image.classList.add("blurred-image");
             
             image_overlay.style.opacity = 1;
-            blurred_img.style.opacity = 1;
         }
          else {
             continue;
         }
     }
-        
+
    
 
 });
