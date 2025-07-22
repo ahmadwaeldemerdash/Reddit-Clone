@@ -663,12 +663,11 @@ body
 }
 
 .scroll-content {
-    overflow-x: scroll;
+    overflow-x: hidden;
     display: flex;
     flex-direction: row;
     color: white;
     gap: 15px;
-    overflow: hidden;
     
 
 }
@@ -1081,5 +1080,11 @@ body
     .REDDIT-LOGO{
         width: fit-content;
         margin-right: 5px;
+    }
+    .carousel {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
     }
 }
