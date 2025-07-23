@@ -20,7 +20,7 @@ body
     grid-template-areas:
         "container container"   
         "side-bar main-content";
-    overflow: hidden
+  
    
 }
 
