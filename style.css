@@ -20,8 +20,8 @@ body
     grid-template-areas:
         "container container"   
         "side-bar main-content";
-
-    overflow: hidden;
+    overflow: hidden
+   
 }
 
 .container {
@@ -42,8 +42,7 @@ body
     height: 100vh;
     overflow-y: scroll;
     scrollbar-width: thin;
-    scrollbar-color: grey transparent;
-    
+    scrollbar-color: grey transparent; 
     max-width: 100%;
 
     
@@ -75,6 +74,7 @@ body
     padding: 10px;
     position: fixed;
     width: 99%;
+    z-index: 100;
 
 }
 #line {
@@ -421,7 +421,7 @@ body
     color: white;
     transition: width 0.3s ease;
     height: 100%;
-    margin-left: 20px;
+    padding-left: 20px;
     border: 1px solid  #3E4142;
     border-left: 1px solid transparent;
     scrollbar-color: grey transparent;
@@ -433,6 +433,7 @@ body
 }
 .side-bar-hidden {
     opacity: 0;
+    pointer-events: none;
 }
 
 #sidebar.collapsed {
@@ -663,7 +664,7 @@ body
 }
 
 .scroll-content {
-    overflow-x: hidden;
+    overflow-x: scroll;
     display: flex;
     flex-direction: row;
     color: white;

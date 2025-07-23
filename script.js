@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const input2 = document.getElementById("password");
     const button = document.getElementById("btn-login");
     const overlay = document.querySelector("#overlay");
-    const main_overlay = document.querySelector("#main-overlay")
+    
     const carousel = document.querySelector(".scroll-content");
     const nav = document.getElementById("side-bar");
     
@@ -40,8 +40,15 @@ document.addEventListener("DOMContentLoaded", function () {
         side_btn.addEventListener("click", function(){
         nav.classList.toggle("side-bar-hidden");
         nav.style.backgroundColor = "#0E1113";
-        main_overlay.classList.toggle("overlay-visible");
+        getComputedStyle(nav).opacity === "0" ? showoverlay(): hideoverlay()
+
+        overlay.addEventListener("click", function(){
+            hideoverlay()
+            nav.classList.add("side-bar-hidden")
+        })
         });
+
+    overlay
 
     window.addEventListener("resize", ()=>{
         if (window.innerWidth > 1024){
@@ -168,10 +175,10 @@ document.addEventListener("DOMContentLoaded", function () {
             carousel.style.scrollBehavior = "smooth"
              if (window.innerWidth > 1280){
                 console.log("here")
-                carousel.scrollLeft += 250;
+                carousel.scrollLeft += 500;
              }
              else {
-                carousel.scrollLeft += 500;
+                carousel.scrollLeft += 700;
                 console.log("here")
              }
             left_btn.style.display = "block";
